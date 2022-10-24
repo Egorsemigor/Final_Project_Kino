@@ -1,0 +1,10 @@
+.container {
+  padding: 0 15px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.adaptiveGrid {
+  display: grid;
+  column-gap: 7px;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+}

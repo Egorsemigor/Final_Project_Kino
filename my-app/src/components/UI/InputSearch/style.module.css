@@ -1,0 +1,16 @@
+.search {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  background: transparent;
+  font-weight: 500;
+  color: #b621fe;
+  width: 400px;
+  height: 40px;
+  border: 2px solid #b621fe;
+  border-radius: 10px;
+  background-repeat: no-repeat;
+  background-image: url("./lens.svg");
+  background-position: 2% 50%;
+  outline: none;
+  padding-left: 40px;
+}
