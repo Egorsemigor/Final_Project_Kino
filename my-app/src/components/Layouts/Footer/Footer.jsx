@@ -34,7 +34,7 @@ export const Footer = () => {
               <a href="#" className={style.icons}>
                 <i className={`${style.ico} ${style.icoInstagram}`}></i>
               </a>
-              <a href="#" className={style.icons}>
+              <a href="#">
                 <i className={`${style.ico} ${style.icoGithub}`}></i>
               </a>
             </div>

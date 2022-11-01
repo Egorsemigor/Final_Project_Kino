@@ -1,6 +1,8 @@
 .card {
   max-width: 190px;
   margin-bottom: 20px;
+  cursor: pointer;
+  margin: 0 auto;
 }
 .posterImg {
   width: 190px;
@@ -22,4 +24,12 @@
   font-size: 12px;
   font-weight: 400;
   color: rgb(212, 204, 204);
+}
+
+@media (max-width: 470px) {
+  .card {
+   
+    margin-bottom: 20px;
+  
+  }
 }

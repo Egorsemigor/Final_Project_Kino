@@ -5,7 +5,7 @@
 }
 
 .button {
-  width: 120px;
+  width: 110px;
   height: 40px;
   color: #fff;
   border-radius: 10px;
@@ -28,4 +28,47 @@
   line-height: 42px;
   padding: 0;
   border: none;
+}
+.bigButton {
+  width: 200px;
+  height: 50px;
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px 25px;
+  font-family: "Open sans", sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1fd1f9;
+  background-image: linear-gradient(315deg, #1fd1f9 0%, #b621fe 74%);
+  line-height: 42px;
+  padding: 0;
+  border: none;
+}
+.bigButtonDay {
+  background-color: black;
+}
+@media (max-width: 750px) {
+  .button {
+    width: 80px;
+    height: 30px;
+    border-radius: 7px;
+    font-size: 6px;
+  }
+}
+
+@media (max-width: 560px) {
+  .button {
+    width: 55px;
+    height: 20px;
+    border-radius: 5px;
+    font-size: 6px;
+  }
 }

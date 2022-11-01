@@ -1,0 +1,167 @@
+.selectedFilm {
+  margin-bottom: 60px;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.flexBlock {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 70px;
+  gap: 100px;
+}
+
+.firstBlock img {
+  border-radius: 35px;
+  cursor: pointer;
+  width: 314px;
+  height: 470px;
+  text-align: center;
+}
+
+.tagline {
+  font-family: "Cinzel";
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: rgb(205, 197, 203);
+  display: flex;
+  justify-content: center;
+}
+
+.filmTitle {
+  color: aliceblue;
+  margin-bottom: 15px;
+  border-radius: 18px;
+  /* -webkit-box-shadow: 4px 3px 15px 10px rgba(203, 181, 214, 0.1);
+  -moz-box-shadow: 4px 3px 15px 10px rgba(203, 181, 214, 0.1);
+  box-shadow: 4px 3px 15px 10px rgba(203, 181, 214, 0.1); */
+  display: flex;
+
+  align-items: center;
+  width: 400px;
+  height: 70px;
+}
+.video {
+  width: 740px;
+  height: 360px;
+}
+.secondBlock {
+  color: rgb(205, 197, 203);
+  font-family: "Open Sans";
+}
+.genres {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+
+.runtime {
+  margin-bottom: 30px;
+}
+
+.revenue {
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+.releaseDate {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.rateBubble {
+  width: 400px;
+  height: 80px;
+  border: 2px solid rgb(84, 42, 123);
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border-radius: 20px;
+  -webkit-box-shadow: 0px 0px 30px 10px rgb(128, 83, 171, 0.22);
+  -moz-box-shadow: 0px 0px 30px 10px rgb(128, 83, 171, 0.22);
+  box-shadow: 0px 0px 30px 10px rgb(128, 83, 171, 0.22);
+}
+
+.ratePlace {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(153, 106, 196, 0.658);
+}
+
+.rate {
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.voteCount {
+  color: rgba(244, 232, 241, 0.699);
+  font-size: 18px;
+  font-weight: 500;
+  color: #a5a1b2;
+}
+
+.budget {
+  color: rgba(244, 232, 241, 0.699);
+  font-size: 14px;
+  font-weight: 500;
+  color: #a5a1b2;
+}
+.videoFlex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.video {
+  width: 82vw;
+  height: 70vh;
+  text-align: center;
+  border-radius: 30px;
+}
+@media (max-width: 840px) {
+  .flexBlock {
+    display: block;
+    margin-bottom: 70px;
+  }
+}
+@media (max-width: 470px) {
+  .flexBlock {
+    display: block;
+    margin-bottom: 70px;
+  }
+  .rateBubble {
+    width: 310px;
+    height: 70px;
+    border-radius: 15px;
+  }
+  .ratePlace {
+    width: 50px;
+    height: 50px;
+    border-radius: 7px;
+  }
+  .filmTitle {
+    border-radius: 13px;
+
+    width: 310px;
+    height: 60px;
+  }
+
+  .firstBlock img {
+    border-radius: 32px;
+    cursor: pointer;
+    width: 300px;
+    height: 450px;
+    margin-bottom: 20px;
+  }
+  .container {
+    padding: 0 10px;
+  }
+}

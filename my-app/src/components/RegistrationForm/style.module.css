@@ -1,0 +1,91 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+.InputTitle {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 29px;
+  letter-spacing: 0.05em;
+  color: #98cde7;
+  margin-bottom: 14px;
+  text-align: left;
+}
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.darkInputTitle {
+  font-family: "Raleway";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 29px;
+  letter-spacing: 0.05em;
+  color: white;
+  margin-bottom: 14px;
+  text-align: left;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 41px;
+  background-color: transparent;
+  padding-top: 63px;
+}
+.darkContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 41px;
+  padding-top: 63px;
+}
+.error {
+  color: red;
+  font-size: 16px;
+}
+.inputMargin {
+  margin-bottom: 41px;
+}
+.margin {
+  margin-bottom: 59px;
+}
+.text {
+  font-family: "Raleway";
+  font-weight: 400;
+  font-size: 25px;
+  line-height: 134%;
+  letter-spacing: 0.03em;
+  color: #98cde7;
+  margin-bottom: 25px;
+}
+.link {
+  font-family: "Raleway";
+  font-weight: 700;
+  font-size: 25px;
+  line-height: 134%;
+  letter-spacing: 0.03em;
+  color: #016efc;
+
+  text-decoration: none;
+}
+form {
+  margin: 0 auto;
+}
+@media (max-width: 400px) {
+  .text {
+    font-size: 18px;
+    line-height: 110%;
+  }
+  .link {
+    font-size: 18px;
+    line-height: 110%;
+  }
+}
