@@ -6,10 +6,11 @@
 }
 .footer {
   width: 100%;
-  border-top: 1px solid rgb(186, 173, 173, 0.2);
+  border-top: 2px solid rgb(255, 255, 255, 0.5);
 }
 .container {
-  width: 1400px;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 .mainDiv {
 }
@@ -75,8 +76,12 @@
   align-items: center;
   margin-bottom: 15px;
 }
+.icon:last-child() {
+  margin-right: 0px;
+}
 .icons {
   display: block;
+  margin-right: 25px;
 }
 
 .ico {
@@ -85,7 +90,7 @@
   background-position: center;
   background-repeat: no-repeat;
   display: block;
-  margin-right: 35px;
+
   border: 1px solid transparent;
   border-radius: 12px;
 }
@@ -139,7 +144,7 @@
 
 .axure {
   font-family: "Cinzel", serif;
-  color: rgb(186, 173, 173, 0.2);
+  color: rgb(255, 255, 255, 0.5);
   font-weight: 500;
   font-size: 14px;
   line-height: 21px;

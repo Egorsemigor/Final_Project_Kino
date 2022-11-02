@@ -10,8 +10,11 @@ export const FilmList = ({ films, onClickFilm }: IList) => {
     <div className={style.container}>
       <div className={style.adaptiveGrid}>
         {films.map((item) => {
+          const clickFilm = () => {
+            onClickFilm(item.id);
+          };
           return (
-            <>
+            <div onClick={clickFilm}>
               <FilmCard
                 id={item.id}
                 key={item.id}
@@ -27,7 +30,7 @@ export const FilmList = ({ films, onClickFilm }: IList) => {
                 runtime={item.runtime}
                 genres={item.genres}
               />
-            </>
+            </div>
           );
         })}
       </div>

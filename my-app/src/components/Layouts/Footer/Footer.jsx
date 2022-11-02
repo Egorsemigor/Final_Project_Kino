@@ -6,14 +6,14 @@ export const Footer = () => {
         <div className={style.mainDiv}>
           <h1 className={style.title}>CinemaRoom</h1>
           <div className={style.buttonContainer}>
-            <a href="#">
+            <a style={{ textDecoration: "none" }} href="#">
               <div className={style.badget}>
                 <div className={style.svgApple}></div>
                 <div className={style.textButton}>App Store</div>
               </div>
             </a>
 
-            <a href="#">
+            <a style={{ textDecoration: "none" }} href="#">
               <div className={style.badget}>
                 <div className={style.svgGoogle}></div>
                 <div className={style.textButton}>Google Play</div>
@@ -34,7 +34,7 @@ export const Footer = () => {
               <a href="#" className={style.icons}>
                 <i className={`${style.ico} ${style.icoInstagram}`}></i>
               </a>
-              <a href="#" className={style.icons}>
+              <a href="#">
                 <i className={`${style.ico} ${style.icoGithub}`}></i>
               </a>
             </div>

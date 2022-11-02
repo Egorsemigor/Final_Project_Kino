@@ -9,7 +9,7 @@ export const DarkModeToggle = ({ inputChecked, onChange }: IProps) => {
   return (
     <div className={styles.switchCheckbox}>
       <label className={styles.switch}>
-        <input type="checkbox" />
+        <input type="checkbox" checked={inputChecked} onChange={onChange} />
         <span className={styles.slider}> </span>
       </label>
     </div>

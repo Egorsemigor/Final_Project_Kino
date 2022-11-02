@@ -1,16 +1,18 @@
 import { ChangeEventHandler, useState } from "react";
 import style from "./style.module.css";
-
-export const InputSearch = () => {
-  const [search, setSearch] = useState("");
-  const handleSearch: ChangeEventHandler<HTMLInputElement> = (event) => {
-    setSearch(event.target.value);
-  };
+interface Input {
+  value: string;
+  placeholder: string;
+  onChange: ChangeEventHandler<HTMLInputElement>;
+  error?: string;
+  title?: string;
+}
+export const InputSearch = (props: Input) => {
   return (
     <input
-      placeholder={"Search for film..."}
-      onChange={handleSearch}
-      value={search}
+      placeholder={props.placeholder}
+      onChange={props.onChange}
+      value={props.value}
       className={style.search}
     ></input>
   );

@@ -6,5 +6,9 @@
 .adaptiveGrid {
   display: grid;
   column-gap: 7px;
-  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  justify-self: center;
+  align-items: center;
 }
+
+
