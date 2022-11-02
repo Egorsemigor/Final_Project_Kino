@@ -6,6 +6,7 @@ import {
   useEffect,
   useState,
 } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { Context } from "../../../App";
 import { searchFilms } from "../../../fetch/searchFilms";
@@ -23,10 +24,23 @@ export const Header = () => {
   // useEffect(() => {
   //   searchFilms(search).then((values) => {});
   // }, [search]);
+  const dispatch = useDispatch();
+  const mode = useSelector(
+    (state: { mode: { mode: boolean } }) => state.mode.mode
+  );
 
+  // const [isDark, setIsDark] = useState(false);
+  const handleOnChange = () => {
+    // if (isDark) {
+    //   setIsDark(false);
+    // } else {
+    //   setIsDark(true);
+    // }
+
+    dispatch({ type: "ADD_MODE", payload: mode });
+  };
   const logOut = () => {
     setUser(null);
-    console.log(user);
     localStorage.clear();
     navigate("/");
   };
@@ -39,11 +53,11 @@ export const Header = () => {
               <span className={style.burger}></span>
             </button>
             <div>
-              <DarkModeToggle inputChecked={false} onChange={() => {}} />
+              <DarkModeToggle inputChecked={mode} onChange={handleOnChange} />
             </div>
           </div>
 
-          <Link to={"/"}>
+          <Link style={{ textDecoration: "none" }} to={"/"}>
             <div className={style.logo}>CinemaRoom</div>
           </Link>
           {/* <InputSearch

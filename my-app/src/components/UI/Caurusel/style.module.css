@@ -1,0 +1,167 @@
+.caurusel {
+  display: block;
+  max-width: 1400px;
+  padding: 0 35px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}
+.link {
+  font-family: "Open sans";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  width: 300px;
+  height: 70px;
+  font-size: 20px;
+  border: 3px solid white;
+  color: white;
+  background-color: transparent;
+}
+.link:hover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  width: 300px;
+  height: 70px;
+  font-size: 20px;
+  border: 3px solid white;
+  color: white;
+  backdrop-filter: blur(3px);
+}
+.title {
+  font-family: "Open sans";
+  font-weight: 700;
+  font-size: 30px;
+}
+.text {
+  font-family: "Open sans";
+  font-weight: 400;
+  font-size: 16px;
+}
+.mainImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mainText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.image {
+  max-width: 100%;
+  border-radius: 50px;
+}
+
+@media (max-width: 768px) {
+  .link {
+    width: 200px;
+    height: 55px;
+    font-size: 14px;
+  }
+  .link:hover {
+    width: 200px;
+    height: 55px;
+    font-size: 14px;
+  }
+  .title {
+    font-family: "Open sans";
+    font-weight: 700;
+    font-size: 23px;
+  }
+  .text {
+    font-family: "Open sans";
+    font-weight: 400;
+    font-size: 13px;
+  }
+  .image {
+    border-radius: 40px;
+  }
+}
+@media (max-width: 660px) {
+  .link {
+    width: 140px;
+    height: 40px;
+    font-size: 10px;
+  }
+  .link:hover {
+    width: 140px;
+    height: 40px;
+    font-size: 10px;
+  }
+  .title {
+    font-family: "Open sans";
+    font-weight: 700;
+    font-size: 17px;
+  }
+  .text {
+    font-family: "Open sans";
+    font-weight: 400;
+    font-size: 10px;
+  }
+  .image {
+    border-radius: 30px;
+  }
+}
+@media (max-width: 560px) {
+  .link {
+    width: 90px;
+    height: 30px;
+    font-size: 8px;
+  }
+  .link:hover {
+    width: 90px;
+    height: 30px;
+    font-size: 8px;
+  }
+  .title {
+    font-family: "Open sans";
+    font-weight: 700;
+    font-size: 12px;
+  }
+  .text {
+    font-family: "Open sans";
+    font-weight: 400;
+    font-size: 8px;
+  }
+  .image {
+    border-radius: 25px;
+  }
+}
+
+@media (max-width: 485px) {
+  .link {
+    width: 60px;
+    height: 25px;
+    font-size: 5px;
+    border: 1px solid white;
+  }
+  .link:hover {
+    width: 60px;
+    height: 25px;
+    font-size: 5px;
+    border: 1px solid white;
+  }
+  .title {
+    font-family: "Open sans";
+    font-weight: 700;
+    font-size: 10px;
+  }
+  .text {
+    font-family: "Open sans";
+    font-weight: 400;
+    font-size: 5px;
+  }
+  .image {
+    border-radius: 20px;
+  }
+}
+
+@media (max-width: 424px) {
+  .caurusel {
+    display: none;
+  }
+}

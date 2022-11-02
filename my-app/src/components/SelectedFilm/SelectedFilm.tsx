@@ -3,10 +3,18 @@ import { Header } from "../Layouts/Header/Header";
 import style from "./style.module.css";
 import pic from "./pic.jpg";
 import { ICard } from "../../Types/interface";
-import { ReactEventHandler, useState } from "react";
+import { ReactEventHandler, useEffect, useState } from "react";
+import ReactPlayer from "react-player";
+import { fetchImg } from "../../fetch/fetchImg";
 
 export const SelectedFilm = (props: ICard) => {
-  const [img, setImage] = useState(props.poster_path);
+  const [img, setImage] = useState("");
+  useEffect(() => {
+    fetchImg(props.title).then((values) => {
+      setImage(values.Poster);
+      console.log(values);
+    });
+  }, []);
   const handleError: ReactEventHandler<HTMLImageElement> = () => {
     setImage(pic);
   };
@@ -49,14 +57,12 @@ export const SelectedFilm = (props: ICard) => {
             </div>
           </div>
           <div className={style.videoFlex}>
-            <video
-              className={style.video}
-              src="azino.mp4"
-              width="740"
-              // height="360"
-              // poster={pic}
+            <ReactPlayer
+              width={"80vw"}
+              height={"50vh"}
               controls
-            ></video>
+              url="https://www.youtube.com/watch?v=K7e3jpYf28I"
+            />
           </div>
         </div>
       </div>

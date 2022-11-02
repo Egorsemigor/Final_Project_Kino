@@ -6,7 +6,7 @@
 }
 .footer {
   width: 100%;
-  border-top: 1px solid rgb(186, 173, 173, 0.2);
+  border-top: 2px solid rgb(255, 255, 255, 0.5);
 }
 .container {
   max-width: 1400px;
@@ -144,7 +144,7 @@
 
 .axure {
   font-family: "Cinzel", serif;
-  color: rgb(186, 173, 173, 0.2);
+  color: rgb(255, 255, 255, 0.5);
   font-weight: 500;
   font-size: 14px;
   line-height: 21px;

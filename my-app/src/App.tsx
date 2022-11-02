@@ -7,6 +7,7 @@ import { AllFilms } from "./components/AllFilms/AllFilms";
 import { SelectedFilm } from "./components/SelectedFilm/SelectedFilm";
 import { IUser } from "./Types/auth";
 import { getUser } from "./fetch/getUser";
+import { useSelector } from "react-redux";
 export const Context = createContext<{
   isDark: boolean;
   setIsDark: (value: boolean) => void;
@@ -51,8 +52,12 @@ export function App() {
         });
     }
   }, []);
+  const mode = useSelector(
+    (state: { mode: { mode: boolean } }) => state.mode.mode
+  );
   return (
-    <BrowserRouter>
+    <div className={'App'}>
+       <BrowserRouter>
       <Context.Provider
         value={{
           isDark: isDark,
@@ -66,5 +71,7 @@ export function App() {
         <RootRouter />
       </Context.Provider>
     </BrowserRouter>
+    </div>
+   
   );
 }
