@@ -16,7 +16,7 @@ import { Link, useNavigate } from "react-router-dom";
 export const Login = () => {
   const navigate = useNavigate();
   const values = useContext(Context);
-  const { setUser, setUserName } = useContext(Context);
+  const { setUser } = useContext(Context);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const handlerEmail: ChangeEventHandler<HTMLInputElement> = (event) => {
@@ -48,13 +48,11 @@ export const Login = () => {
             .then((user) => {
               setUser(user);
               console.log(user);
-              setUserName(user.username);
               navigate("/");
             });
 
           console.log(json);
         } else {
-          
         }
       });
   };
@@ -89,7 +87,7 @@ export const Login = () => {
           </div>
         </div>
         <div className={style.buttonContainer}>
-          <Button text={"Login"}  type={"dontAdaptive"}  onClick={() => {}} />
+          <Button text={"Login"} type={"dontAdaptive"} onClick={() => {}} />
         </div>
       </form>
       <p className={style.text}>

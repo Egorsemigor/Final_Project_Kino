@@ -13,21 +13,18 @@ export const Context = createContext<{
   setIsDark: (value: boolean) => void;
   user: IUser | null;
   setUser: (value: IUser | null) => void;
-  userName1: string;
-  setUserName: (value: any) => void;
+
 }>({
   isDark: false,
   setIsDark: () => {},
   user: null,
   setUser: (value: IUser | null) => {},
-  userName1: "",
-  setUserName: (value: any) => {},
+
 });
 const access = localStorage.getItem("access");
 export function App() {
   const [isDark, setIsDark] = useState(false);
   const [user, setUser] = useState<IUser | null>(null);
-  const [userName1, setUserName] = useState("");
   const [isReady, setIsReady] = useState(!access);
   useEffect(() => {
     if (access) {
@@ -44,7 +41,7 @@ export function App() {
         .then((user) => {
           if (isOk) {
             setUser(user);
-            setUserName(user.username);
+            
           }
         })
         .finally(() => {
@@ -64,8 +61,6 @@ export function App() {
           setIsDark: setIsDark,
           user: user,
           setUser: setUser,
-          userName1: userName1,
-          setUserName: setUserName,
         }}
       >
         <RootRouter />

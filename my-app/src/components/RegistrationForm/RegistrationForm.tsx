@@ -31,25 +31,41 @@ export const RegistrationForm = () => {
   const navigate = useNavigate();
   const handlerUserName: ChangeEventHandler<HTMLInputElement> = (event) => {
     const error = validateRequired(event.target.value);
-    error ? setUserError(error) : setUserError("");
+    if (error) {
+      setUserError(error);
+    } else {
+      setUserError("");
+    }
     setUserName(event.target.value);
   };
   const handlerEmail: ChangeEventHandler<HTMLInputElement> = (event) => {
     const error = validateEmail(event.target.value);
-    error ? setEmailError(error) : setEmailError("");
+    if (error) {
+      setEmailError(error);
+    } else {
+      setEmailError("");
+    }
 
     setEmail(event.target.value);
   };
   const handlerPassword: ChangeEventHandler<HTMLInputElement> = (event) => {
     const error = validatePassword(event.target.value);
-    error ? setPasswordError(error) : setPasswordError("");
+    if (error) {
+      setPasswordError(error);
+    } else {
+      setPasswordError("");
+    }
     setPassword(event.target.value);
   };
   const handlerComfirmPassword: ChangeEventHandler<HTMLInputElement> = (
     event
   ) => {
     const error = validateConfirmPassword(password, event.target.value);
-    error ? setConfirmPasswordError(error) : setConfirmPasswordError("");
+    if (error) {
+      setConfirmPasswordError(error);
+    } else {
+      setConfirmPasswordError("");
+    }
     setConfirmPassword(event.target.value);
   };
   const handleSubmit: FormEventHandler<HTMLFormElement> = (event) => {

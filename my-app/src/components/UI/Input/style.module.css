@@ -23,7 +23,7 @@
 .text {
   position: absolute;
   left: 10%;
-  bottom: -25px;
+  bottom: -42px;
   color: red;
 }
 @media (max-width: 420px) {
