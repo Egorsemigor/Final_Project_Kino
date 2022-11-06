@@ -25,6 +25,19 @@ export const Header = () => {
   // useEffect(() => {
   //   searchFilms(search).then((values) => {});
   // }, [search]);
+  const dispatch = useDispatch();
+  const mode = useSelector(
+    (state: { mode: { mode: boolean } }) => state.mode.mode
+  );
+
+  // const [isDark, setIsDark] = useState(false);
+  const handleOnChange = () => {
+    // if (isDark) {
+    //   setIsDark(false);
+    // } else {
+    //   setIsDark(true);
+    // }
+
 
   const mode = true;
 
@@ -36,6 +49,7 @@ export const Header = () => {
     //   setIsDark(true);
     // }
     // dispatch({ type: "ADD_MODE", payload: mode });
+
   };
   const logOut = () => {
     setUser(null);
@@ -53,8 +67,10 @@ export const Header = () => {
             </div>
           </div>
 
+
           <Link style={{ textDecoration: "none" }} to={"/main"}>
             <div className={style.logo}>MovieHouse</div>
+
           </Link>
           {/* <InputSearch
             value={search}

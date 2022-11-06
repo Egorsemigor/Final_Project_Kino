@@ -16,12 +16,14 @@ export const AllFilms = () => {
   const [films, setFilms] = useState<ICard[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
+
   // useEffect(() => {
   //   fetchFilms(film.len).then((film) => {
   //     setFilms(film.data);
   //     console.log(film.data);
   //   });
   // }, []);
+
   const loadMore = () => {
     return fetchFilms(films.length, search).then((film) => {
       setFilms(films.concat(film.data));
@@ -58,6 +60,7 @@ export const AllFilms = () => {
           onChange={handleInput}
         />
       </div>
+
       {isLoading ? (
         <div
           style={{
@@ -71,6 +74,7 @@ export const AllFilms = () => {
       ) : (
         <FilmList films={films} onClickFilm={navigateToFilm} />
       )}
+
       <div className={style.buttonLoadMore}>
         <Button
           type={"dontAdaptive"}

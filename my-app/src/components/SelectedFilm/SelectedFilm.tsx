@@ -6,6 +6,7 @@ import { ICard } from "../../Types/interface";
 import { ReactEventHandler, useEffect, useState } from "react";
 import ReactPlayer from "react-player";
 import { fetchImg } from "../../fetch/fetchImg";
+
 import { fetchTrailer } from "../../fetch/fetchTrailer";
 import Iframe from "react-iframe";
 import IframeResizer from "iframe-resizer-react";
@@ -26,6 +27,7 @@ export const SelectedFilm = (props: ICard) => {
       setTrailer(values.linkEmbed);
     });
   }, [imdbID]);
+
 
   const handleError: ReactEventHandler<HTMLImageElement> = () => {
     setImage(pic);
@@ -92,6 +94,7 @@ export const SelectedFilm = (props: ICard) => {
             </div>
           </div>
           <div className={style.videoFlex}>
+
             {trailer ? (
               // <iframe
               //   className={style.trailer}
@@ -109,6 +112,7 @@ export const SelectedFilm = (props: ICard) => {
                 url={`https://www.youtube.com/watch?v=K7e3jpYf28I`}
               />
             )}
+
           </div>
         </div>
       </div>

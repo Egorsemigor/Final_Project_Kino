@@ -2,6 +2,7 @@ import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import Carousel from "react-bootstrap/Carousel";
 import style from "./style.module.css";
+
 import { carouselData } from "./carouselData";
 export const Carusel = () => {
   return (
@@ -26,6 +27,7 @@ export const Carusel = () => {
             </Carousel.Item>
           );
         })}
+
       </Carousel>
     </div>
   );

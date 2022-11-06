@@ -7,16 +7,20 @@ import { AllFilms } from "./components/AllFilms/AllFilms";
 import { SelectedFilm } from "./components/SelectedFilm/SelectedFilm";
 import { IUser } from "./Types/auth";
 import { getUser } from "./fetch/getUser";
+import { useSelector } from "react-redux";
 export const Context = createContext<{
   isDark: boolean;
   setIsDark: (value: boolean) => void;
   user: IUser | null;
   setUser: (value: IUser | null) => void;
+
 }>({
   isDark: false,
   setIsDark: () => {},
   user: null,
   setUser: (value: IUser | null) => {},
+
+
 });
 const access = localStorage.getItem("access");
 export function App() {
@@ -38,6 +42,8 @@ export function App() {
         .then((user) => {
           if (isOk) {
             setUser(user);
+
+
           }
         })
         .finally(() => {
@@ -45,6 +51,7 @@ export function App() {
         });
     }
   }, []);
+
 
   return (
     <div className={"App"}>
@@ -61,5 +68,6 @@ export function App() {
         </Context.Provider>
       </BrowserRouter>
     </div>
+
   );
 }
