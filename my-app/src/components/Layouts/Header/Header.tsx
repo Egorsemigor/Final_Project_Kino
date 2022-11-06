@@ -6,9 +6,11 @@ import {
   useEffect,
   useState,
 } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { Context } from "../../../App";
 import { searchFilms } from "../../../fetch/searchFilms";
+import { Burger } from "../../Burger/Burger";
 import { Button } from "../../UI/Button/Button";
 import { DarkModeToggle } from "../../UI/DarkModeToggle";
 import { InputSearch } from "../../UI/InputSearch/InputSearch";
@@ -24,27 +26,35 @@ export const Header = () => {
   //   searchFilms(search).then((values) => {});
   // }, [search]);
 
+  const mode = true;
+
+  // const [isDark, setIsDark] = useState(false);
+  const handleOnChange = () => {
+    // if (isDark) {
+    //   setIsDark(false);
+    // } else {
+    //   setIsDark(true);
+    // }
+    // dispatch({ type: "ADD_MODE", payload: mode });
+  };
   const logOut = () => {
     setUser(null);
-    console.log(user);
     localStorage.clear();
-    navigate("/");
+    navigate("/main");
   };
   return (
     <header className={style.header}>
       <div className={style.container}>
         <div className={style.mainDiv}>
           <div className={style.burgerIcon}>
-            <button className={style.clearButton}>
-              <span className={style.burger}></span>
-            </button>
+            <Burger />
             <div>
-              <DarkModeToggle inputChecked={false} onChange={() => {}} />
+              <DarkModeToggle inputChecked={mode} onChange={handleOnChange} />
             </div>
           </div>
 
-          <Link to={"/"}>
-            <div className={style.logo}>CinemaRoom</div>
+          <Link style={{ textDecoration: "none" }} to={"/main"}>
+            <div className={style.logo}>MovieHouse</div>
           </Link>
           {/* <InputSearch
             value={search}

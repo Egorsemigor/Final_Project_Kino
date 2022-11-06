@@ -6,7 +6,8 @@
 }
 .footer {
   width: 100%;
-  border-top: 1px solid rgb(186, 173, 173, 0.2);
+  border-top: 2px solid rgb(255, 255, 255, 0.5);
+  padding-top: 20px;
 }
 .container {
   max-width: 1400px;
@@ -15,11 +16,13 @@
 .mainDiv {
 }
 .title {
-  font-family: "Cinzel", serif;
-  color: #b621fe;
+  font-family: "Orbitron";
   text-align: center;
-  font-size: 40px;
-  margin-bottom: 10px;
+  color: rgb(39, 3, 39);
+  text-shadow: 0 0 7px rgb(200, 140, 194), 0 0 10px rgb(173, 114, 178),
+    0 0 21px rgb(207, 146, 199), 0 0 42px rgb(32, 6, 40),
+    0 0 82px rgb(72, 12, 89), 0 0 92px rgb(65, 11, 81),
+    0 0 102px rgb(70, 11, 86), 0 0 151px rgb(86, 15, 105);
 }
 .buttonContainer {
   display: flex;
@@ -58,13 +61,13 @@
   color: #a7a7a7;
 }
 .badget:hover {
-  border: 1px solid #b621fe;
-  -webkit-box-shadow: -1px -3px 23px 6px rgba(192, 104, 193, 0.18);
-  -moz-box-shadow: -1px -3px 23px 6px rgba(192, 104, 193, 0.18);
-  box-shadow: -1px -3px 23px 6px rgba(192, 104, 193, 0.18);
+  border: 1px solid #00f1fd;
+  -webkit-box-shadow: -1px -3px 23px 6px rgba(0, 241, 253, 0.18);
+  -moz-box-shadow: -1px -3px 23px 6px rgba(0, 241, 253, 0.18);
+  box-shadow: -1px -3px 23px 6px rgba(0, 241, 253, 0.18);
 }
 .badget:hover .textButton {
-  color: #b621fe;
+  color: #00f1fd;
 }
 .badget:hover .svg {
   fill: #b621fe;
@@ -144,7 +147,7 @@
 
 .axure {
   font-family: "Cinzel", serif;
-  color: rgb(186, 173, 173, 0.2);
+  color: rgb(255, 255, 255, 0.5);
   font-weight: 500;
   font-size: 14px;
   line-height: 21px;

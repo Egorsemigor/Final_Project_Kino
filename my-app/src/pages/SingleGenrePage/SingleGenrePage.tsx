@@ -1,14 +1,13 @@
 import { Footer } from "../../components/Layouts/Footer/Footer";
 import { Header } from "../../components/Layouts/Header/Header";
-import { Login } from "../../components/Login/Login";
-import style from "./style.module.css";
+import { SingleGenre } from "../../components/SingleGenre/SingleGenre";
 
-export const LoginPage = () => {
+export const SingleGenrePage = () => {
   return (
-    <div>
+    <>
       <Header />
-      <Login />
+      <SingleGenre />
       <Footer />
-    </div>
+    </>
   );
 };

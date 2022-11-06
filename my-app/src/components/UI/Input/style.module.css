@@ -2,28 +2,27 @@
   position: relative;
 }
 .search {
-  position: relative;
   font-family: "Open Sans", sans-serif;
   font-size: 14px;
   background: transparent;
   font-weight: 500;
-  color: #b621fe;
+  color: #00f1fd;
   width: 400px;
   height: 40px;
-  border: 2px solid #b621fe;
+  border: 2px solid #00f1fd;
   border-radius: 10px;
   outline: none;
   padding-left: 10px;
 }
 
 .error {
-  border: 4px solid red;
+  border: 3px solid red;
   border-radius: 10px;
 }
 .text {
   position: absolute;
   left: 10%;
-  bottom: -25px;
+  bottom: -42px;
   color: red;
 }
 @media (max-width: 420px) {
