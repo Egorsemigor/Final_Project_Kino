@@ -1,6 +1,16 @@
-.App {
-  background-image: url("https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77700327019.jpg");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-.dayApp {
-  background-image: url("https://catherineasquithgallery.com/uploads/posts/2021-02/1614375115_45-p-fon-svetlo-serii-gradient-51.jpg");
+.App {
+  background: rgb(40, 36, 40);
+  background: linear-gradient(
+    90deg,
+    rgba(40, 36, 40, 1) 15%,
+    rgba(45, 6, 47, 1) 35%,
+    rgba(57, 3, 62, 1) 50%,
+    rgba(45, 6, 47, 1) 65%,
+    rgba(40, 36, 40, 1) 85%
+  ); /* background-image: url("https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77700327019.jpg"); */
 }
