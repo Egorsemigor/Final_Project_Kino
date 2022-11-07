@@ -59,7 +59,6 @@
 }
 
 .logo {
-
   font-family: "Orbitron", sans-serif;
   font-weight: 500;
   font-size: 65px;
@@ -77,7 +76,6 @@
   .logo {
     font-size: 55px;
   }
-
 }
 @media (max-width: 900px) {
   .burgerIcon {

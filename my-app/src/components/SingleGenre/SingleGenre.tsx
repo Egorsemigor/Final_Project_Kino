@@ -39,7 +39,8 @@ export const SingleGenre = () => {
 
   return (
     <>
-      <Title genre={genre?.slice(1)} />
+   { typeof genre ==='string' ? <Title genre={ genre.slice(1)} />: 'Genre'}
+      
       {isLoading ? (
         <div
           style={{
