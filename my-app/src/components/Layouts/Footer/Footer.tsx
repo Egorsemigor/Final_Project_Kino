@@ -1,22 +1,30 @@
 import style from "./style.module.css";
+import { useSelector } from "react-redux";
 export const Footer = () => {
+  const mode = useSelector(
+    (state: { mode: { mode: boolean } }) => state.mode.mode
+  );
   return (
     <footer className={style.footer}>
       <div className={style.container}>
         <div className={style.mainDiv}>
-          <h1 className={style.title}>MovieHouse</h1>
+          <h1 className={mode ? style.title : style.dayTitle}>MovieHouse</h1>
           <div className={style.buttonContainer}>
             <a style={{ textDecoration: "none" }} href="#">
-              <div className={style.badget}>
+              <div className={mode ? style.badget : style.dayBadget}>
                 <div className={style.svgApple}></div>
-                <div className={style.textButton}>App Store</div>
+                <div className={mode ? style.textButton : style.dayTextButton}>
+                  App Store
+                </div>
               </div>
             </a>
 
             <a style={{ textDecoration: "none" }} href="#">
-              <div className={style.badget}>
+              <div className={mode ? style.badget : style.dayBadget}>
                 <div className={style.svgGoogle}></div>
-                <div className={style.textButton}>Google Play</div>
+                <div className={mode ? style.textButton : style.dayTextButton}>
+                  Google Play
+                </div>
               </div>
             </a>
           </div>

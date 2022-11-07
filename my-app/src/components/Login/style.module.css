@@ -1,9 +1,9 @@
-* {
+style {
+  font-family: "Orbitron";
   box-sizing: border-box;
 }
 .InputTitle {
-  font-family: "Raleway";
-  font-style: normal;
+  font-family: "Orbitron";
   font-weight: 500;
   font-size: 25px;
   line-height: 29px;
@@ -12,18 +12,18 @@
   margin-bottom: 14px;
   text-align: left;
 }
-
-.darkInputTitle {
-  font-family: "Raleway";
+.dayInputTitle {
+  font-family: "Orbitron";
   font-style: normal;
   font-weight: 500;
   font-size: 25px;
   line-height: 29px;
   letter-spacing: 0.05em;
-  color: white;
+  color: #f8f8f8;
   margin-bottom: 14px;
   text-align: left;
 }
+
 .container {
   display: flex;
   flex-direction: column;
@@ -49,15 +49,16 @@
   margin-bottom: 59px;
 }
 .text {
-  font-family: "Raleway";
+  font-family: "Orbitron";
   font-weight: 400;
   font-size: 25px;
   line-height: 134%;
   letter-spacing: 0.03em;
   color: #98cde7;
+  margin-bottom: 25px;
 }
 .link {
-  font-family: "Raleway";
+  font-family: "Orbitron";
   font-weight: 700;
   font-size: 25px;
   line-height: 134%;
@@ -71,13 +72,23 @@
   justify-content: center;
   align-items: center;
 }
-@media (max-width: 440px) {
+@media (max-width: 700px) {
   .text {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 110%;
   }
   .link {
-    font-size: 18px;
+    font-size: 20px;
+    line-height: 110%;
+  }
+}
+@media (max-width: 480px) {
+  .text {
+    font-size: 11px;
+    line-height: 110%;
+  }
+  .link {
+    font-size: 14px;
     line-height: 110%;
   }
 }

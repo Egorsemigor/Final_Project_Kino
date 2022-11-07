@@ -18,6 +18,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 import { registerUser } from "../../fetch/registerUser";
 import { Context } from "../../App";
+import { useSelector } from "react-redux";
 export const RegistrationForm = () => {
   const values = useContext(Context);
   const [userName, setUserName] = useState("");
@@ -132,16 +133,16 @@ export const RegistrationForm = () => {
         });
     }
   };
+  const mode = useSelector(
+    (state: { mode: { mode: boolean } }) => state.mode.mode
+  );
+
   return (
     <div className={values.isDark ? style.darkContainer : style.container}>
       <form style={{ margin: "0 auto" }} onSubmit={handleSubmit}>
         <div className={style.margin}>
           <div className={style.inputMargin}>
-            <p
-              className={
-                values.isDark ? style.darkInputTitle : style.InputTitle
-              }
-            >
+            <p className={mode ? style.InputTitle : style.dayInputTitle}>
               User name
             </p>
             <Input
@@ -152,11 +153,7 @@ export const RegistrationForm = () => {
             />
           </div>
           <div className={style.inputMargin}>
-            <p
-              className={
-                values.isDark ? style.darkInputTitle : style.InputTitle
-              }
-            >
+            <p className={mode ? style.InputTitle : style.dayInputTitle}>
               Email
             </p>
             <Input
@@ -167,11 +164,7 @@ export const RegistrationForm = () => {
             />
           </div>
           <div className={style.inputMargin}>
-            <p
-              className={
-                values.isDark ? style.darkInputTitle : style.InputTitle
-              }
-            >
+            <p className={mode ? style.InputTitle : style.dayInputTitle}>
               Password
             </p>
             <Input
@@ -182,11 +175,7 @@ export const RegistrationForm = () => {
             />
           </div>
           <div className={style.inputMargin}>
-            <p
-              className={
-                values.isDark ? style.darkInputTitle : style.InputTitle
-              }
-            >
+            <p className={mode ? style.InputTitle : style.dayInputTitle}>
               Confirm Password
             </p>
             <Input

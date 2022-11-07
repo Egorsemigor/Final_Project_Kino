@@ -13,7 +13,7 @@ import IframeResizer from "iframe-resizer-react";
 export const SelectedFilm = (props: ICard) => {
   const [img, setImage] = useState("");
   const [imdbID, setImdbID] = useState("");
-  const [trailer, setTrailer] = useState(null);
+  const [trailer, setTrailer] = useState("");
   const [width, setWidth] = useState(0);
   useEffect(() => {
     fetchImg(props.title).then((values) => {
@@ -102,8 +102,8 @@ export const SelectedFilm = (props: ICard) => {
               // ></iframe>
               <iframe
                 allowFullScreen={true}
-                src={`${trailer}?width=480`}
-                width="480"
+                src={`${trailer}?width=320`}
+                width="320"
                 height="320"
               />
             ) : (

@@ -12,6 +12,7 @@ import { getUser } from "../../fetch/getUser";
 import { login } from "../../fetch/login";
 import { Context } from "../../App";
 import { Link, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 export const Login = () => {
   const navigate = useNavigate();
@@ -56,27 +57,21 @@ export const Login = () => {
         }
       });
   };
-
+  const mode = useSelector(
+    (state: { mode: { mode: boolean } }) => state.mode.mode
+  );
   return (
     <div className={values.isDark ? style.darkContainer : style.container}>
       <form onSubmit={handleSubmit}>
         <div className={style.margin}>
           <div className={style.inputMargin}>
-            <p
-              className={
-                values.isDark ? style.darkInputTitle : style.InputTitle
-              }
-            >
+            <p className={mode ? style.InputTitle : style.dayInputTitle}>
               Email
             </p>
             <Input value={email} placeholder={""} onChange={handlerEmail} />
           </div>
           <div className={style.inputMargin}>
-            <p
-              className={
-                values.isDark ? style.darkInputTitle : style.InputTitle
-              }
-            >
+            <p className={mode ? style.InputTitle : style.dayInputTitle}>
               Password
             </p>
             <Input
