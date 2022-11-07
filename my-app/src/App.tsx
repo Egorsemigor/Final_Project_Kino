@@ -20,6 +20,7 @@ export const Context = createContext<{
   user: null,
   setUser: (value: IUser | null) => {},
 
+
 });
 const access = localStorage.getItem("access");
 export function App() {
@@ -41,7 +42,8 @@ export function App() {
         .then((user) => {
           if (isOk) {
             setUser(user);
-            
+
+
           }
         })
         .finally(() => {
@@ -49,24 +51,23 @@ export function App() {
         });
     }
   }, []);
-  const mode = useSelector(
-    (state: { mode: { mode: boolean } }) => state.mode.mode
-  );
+
+
   return (
-    <div className={'App'}>
-       <BrowserRouter>
-      <Context.Provider
-        value={{
-          isDark: isDark,
-          setIsDark: setIsDark,
-          user: user,
-          setUser: setUser,
-        }}
-      >
-        <RootRouter />
-      </Context.Provider>
-    </BrowserRouter>
+    <div className={"App"}>
+      <BrowserRouter>
+        <Context.Provider
+          value={{
+            isDark: isDark,
+            setIsDark: setIsDark,
+            user: user,
+            setUser: setUser,
+          }}
+        >
+          <RootRouter />
+        </Context.Provider>
+      </BrowserRouter>
     </div>
-   
+
   );
 }

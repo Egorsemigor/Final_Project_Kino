@@ -48,7 +48,9 @@ export const Login = () => {
             .then((user) => {
               setUser(user);
               console.log(user);
-              navigate("/");
+
+              navigate("/main");
+
             });
 
           console.log(json);

@@ -7,17 +7,51 @@ import { ReactEventHandler, useEffect, useState } from "react";
 import ReactPlayer from "react-player";
 import { fetchImg } from "../../fetch/fetchImg";
 
+import { fetchTrailer } from "../../fetch/fetchTrailer";
+import Iframe from "react-iframe";
+import IframeResizer from "iframe-resizer-react";
+
 export const SelectedFilm = (props: ICard) => {
   const [img, setImage] = useState("");
+  const [imdbID, setImdbID] = useState("");
+  const [trailer, setTrailer] = useState(null);
+  const [width, setWidth] = useState(0);
   useEffect(() => {
     fetchImg(props.title).then((values) => {
       setImage(values.Poster);
-      console.log(values);
+      setImdbID(values.imdbID);
     });
   }, []);
+  useEffect(() => {
+    fetchTrailer(imdbID).then((values) => {
+      setTrailer(values.linkEmbed);
+    });
+  }, [imdbID]);
+
+
   const handleError: ReactEventHandler<HTMLImageElement> = () => {
     setImage(pic);
   };
+
+  // const [screenSize, getDimension] = useState({
+  //   dynamicWidth: window.innerWidth,
+  //   dynamicHeight: window.innerHeight,
+  // });
+  // const setDimension = () => {
+  //   getDimension({
+  //     dynamicWidth: window.innerWidth,
+  //     dynamicHeight: window.innerHeight,
+  //   });
+  // };
+
+  // useEffect(() => {
+  //   window.addEventListener("resize", setDimension);
+
+  //   return () => {
+  //     window.removeEventListener("resize", setDimension);
+  //   };
+  // }, [screenSize]);
+  // console.log(screenSize.dynamicWidth);
   return (
     <>
       <div className={style.selectedFilm}>
@@ -25,8 +59,11 @@ export const SelectedFilm = (props: ICard) => {
           <div className={style.flexBlock}>
             <div className={style.firstBlock}>
               <div className={style.tagline}>{props.tagline}</div>
-
-              <img className={style.image} src={img} onError={handleError} />
+              {img ? (
+                <img className={style.image} src={img} onError={handleError} />
+              ) : (
+                <img className={style.image} src={pic} onError={handleError} />
+              )}
             </div>
             <div className={style.secondBlock}>
               <h1 className={style.filmTitle}>{props.title}</h1>
@@ -57,12 +94,25 @@ export const SelectedFilm = (props: ICard) => {
             </div>
           </div>
           <div className={style.videoFlex}>
-            <ReactPlayer
-              width={"80vw"}
-              height={"50vh"}
-              controls
-              url="https://www.youtube.com/watch?v=K7e3jpYf28I"
-            />
+
+            {trailer ? (
+              // <iframe
+              //   className={style.trailer}
+              //   src={`${trailer}`}
+
+              //   allowFullScreen={true}
+              // ></iframe>
+              <Iframe
+                width={`320px`}
+                height="320px"
+                url={`${trailer}?width=320px`}
+              />
+            ) : (
+              <ReactPlayer
+                url={`https://www.youtube.com/watch?v=K7e3jpYf28I`}
+              />
+            )}
+
           </div>
         </div>
       </div>

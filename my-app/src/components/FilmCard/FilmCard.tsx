@@ -10,7 +10,7 @@ export const FilmCard = (props: ICard) => {
   useEffect(() => {
     fetchImg(props.title).then((values) => {
       setImage(values.Poster);
-      console.log(values);
+
     });
   }, []);
 
@@ -26,18 +26,18 @@ export const FilmCard = (props: ICard) => {
       {img ? (
         <div className={style.card}>
           <img onError={handleError} src={img} className={style.posterImg} />
-          <h2 className={mode ? style.title : style.dayTitle}>{props.title}</h2>
-          <p className={mode ? style.genres : style.dayGenres}>
-            {props.genres.join(", ")}
-          </p>
+
+          <h2 className={style.dayTitle}>{props.title}</h2>
+          <p className={style.dayGenres}>{props.genres.join(", ")}</p>
+
         </div>
       ) : (
         <div className={style.card}>
           <img src={image} className={style.posterImg} />
-          <h2 className={mode ? style.title : style.dayTitle}>{props.title}</h2>
-          <p className={mode ? style.genres : style.dayGenres}>
-            {props.genres.join(", ")}
-          </p>
+
+          <h2 className={style.dayTitle}>{props.title}</h2>
+          <p className={style.dayGenres}>{props.genres.join(", ")}</p>
+
         </div>
       )}
     </>
