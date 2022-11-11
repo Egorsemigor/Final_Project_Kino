@@ -57,9 +57,18 @@
   display: flex;
   gap: 30px;
 }
-
+.dayLogo {
+  font-family: "Orbitron", sans-serif;
+  font-weight: 500;
+  font-size: 65px;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 7px rgb(200, 140, 194), 0 0 10px rgb(173, 114, 178),
+    0 0 21px rgb(207, 146, 199), 0 0 42px rgb(32, 6, 40),
+    0 0 82px rgb(72, 12, 89), 0 0 92px rgb(65, 11, 81),
+    0 0 102px rgb(70, 11, 86), 0 0 151px rgb(86, 15, 105);
+}
 .logo {
-
   font-family: "Orbitron", sans-serif;
   font-weight: 500;
   font-size: 65px;
@@ -71,13 +80,15 @@
     0 0 102px rgb(70, 11, 86), 0 0 151px rgb(86, 15, 105);
 }
 @media (max-width: 960px) {
+  .dayLogo {
+    font-size: 55px;
+  }
   .burgerIcon {
     gap: 156px;
   }
   .logo {
     font-size: 55px;
   }
-
 }
 @media (max-width: 900px) {
   .burgerIcon {
@@ -86,9 +97,15 @@
   .logo {
     font-size: 45px;
   }
+  .dayLogo {
+    font-size: 45px;
+  }
 }
 @media (max-width: 830px) {
   .logo {
+    font-size: 35px;
+  }
+  .dayLogo {
     font-size: 35px;
   }
 }
@@ -102,14 +119,23 @@
   .logo {
     font-size: 25px;
   }
+  .dayLogo {
+    font-size: 25px;
+  }
 }
 @media (max-width: 620px) {
   .logo {
     font-size: 20px;
   }
+  .dayLogo {
+    font-size: 20px;
+  }
 }
 @media (max-width: 560px) {
   .logo {
+    font-size: 20px;
+  }
+  .dayLogo {
     font-size: 20px;
   }
 }
@@ -130,6 +156,9 @@
 }
 @media (max-width: 430px) {
   .logo {
+    display: none;
+  }
+  .dayLogo {
     display: none;
   }
 }

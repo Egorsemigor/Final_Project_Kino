@@ -13,14 +13,11 @@ export const Context = createContext<{
   setIsDark: (value: boolean) => void;
   user: IUser | null;
   setUser: (value: IUser | null) => void;
-
 }>({
   isDark: false,
   setIsDark: () => {},
   user: null,
   setUser: (value: IUser | null) => {},
-
-
 });
 const access = localStorage.getItem("access");
 export function App() {
@@ -42,8 +39,6 @@ export function App() {
         .then((user) => {
           if (isOk) {
             setUser(user);
-
-
           }
         })
         .finally(() => {
@@ -51,10 +46,11 @@ export function App() {
         });
     }
   }, []);
-
-
+  const mode = useSelector(
+    (state: { mode: { mode: boolean } }) => state.mode.mode
+  );
   return (
-    <div className={"App"}>
+    <div className={mode ? "App" : "dayApp"}>
       <BrowserRouter>
         <Context.Provider
           value={{
@@ -68,6 +64,5 @@ export function App() {
         </Context.Provider>
       </BrowserRouter>
     </div>
-
   );
 }

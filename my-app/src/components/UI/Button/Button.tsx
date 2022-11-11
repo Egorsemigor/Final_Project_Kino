@@ -5,6 +5,7 @@ import style from "./style.module.css";
 // }
 import { MouseEventHandler, useContext } from "react";
 import { Context } from "../../../App";
+import { useSelector } from "react-redux";
 
 type ButtonColorType = "adaptive" | "dontAdaptive";
 
@@ -16,30 +17,21 @@ interface IButton {
   onClick: MouseEventHandler<HTMLButtonElement>;
 }
 
-const getButtonStyle = (type: ButtonColorType, isDark: boolean) => {
+const getButtonStyle = (type: ButtonColorType, mode: boolean) => {
   if (type === "dontAdaptive") {
-    return style.bigButton;
+    return mode ? style.bigButton : style.dayBigButton ;
   } else {
-    return style.button;
+    return mode ? style.button : style.dayButton;
   }
 };
 
 export const Button = ({ text, type, onClick }: IButton) => {
-  const { isDark } = useContext(Context);
-  // let style = "";
-  // if (text === "Registration") {
-  //   style = "bigButton";
-  // } else if (text === "Login") {
-  //   style = "bigButton";
-  // } else if (text === "Load more films") {
-  //   style = "bigButton";
-  // } else {
-  //   style = "button";
-  // }
+  const mode = useSelector(
+    (state: { mode: { mode: boolean } }) => state.mode.mode
+  );
 
-  // text === "Registration" || 'Login'  || 'Load More Films'  ? style.bigButton : style.button
   return (
-    <button className={getButtonStyle(type, isDark)} onClick={onClick}>
+    <button className={getButtonStyle(type, mode)} onClick={onClick}>
       {text}
     </button>
   );

@@ -1,7 +1,6 @@
 import { combineReducers, createStore } from "redux";
-import { toggleReduser } from "./redusers/toggleReduser";
-const rootReduser = combineReducers({
-  mode: toggleReduser,
+import { modeReducer } from "./redusers/modeReducer";
+const rootReducer = combineReducers({
+  mode: modeReducer,
 });
-
-export const store = createStore(rootReduser);
+export const store = createStore(rootReducer);

@@ -27,13 +27,13 @@
   font-family: "Cinzel";
   font-size: 20px;
   margin-bottom: 20px;
-  color: rgb(205, 197, 203);
+  color: #ffffff;
   display: flex;
   justify-content: center;
 }
 
 .filmTitle {
-  color: aliceblue;
+  color: #ffffff;
   margin-bottom: 15px;
   border-radius: 18px;
   /* -webkit-box-shadow: 4px 3px 15px 10px rgba(203, 181, 214, 0.1);
@@ -50,7 +50,7 @@
   height: 360px;
 }
 .secondBlock {
-  color: rgb(205, 197, 203);
+  color: #ffffff;
   font-family: "Open Sans";
 }
 .genres {
@@ -106,14 +106,14 @@
   color: rgba(244, 232, 241, 0.699);
   font-size: 18px;
   font-weight: 500;
-  color: #a5a1b2;
+  color: #ffffff;
 }
 
 .budget {
   color: rgba(244, 232, 241, 0.699);
   font-size: 14px;
   font-weight: 500;
-  color: #a5a1b2;
+  color: #ffffff;
 }
 .videoFlex {
   width: 100%;

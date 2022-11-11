@@ -1,19 +1,8 @@
 import { Link } from "react-router-dom";
+import { genresArr } from "./genresArr";
 import style from "./style.module.css";
 
 export const Burger = () => {
-  const genresArr: string[] = [
-    "Drama",
-    "Adventure",
-    "Comedy",
-    "Fantasy",
-    "Action",
-    "Horror",
-    "Thriller",
-    "Animation",
-    "Family",
-    "Science Fiction",
-  ];
   return (
     <div className={style.burgerMenu}>
       <input id={style.menuToggle} type="checkbox" />

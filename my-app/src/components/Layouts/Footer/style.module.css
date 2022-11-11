@@ -8,7 +8,6 @@
   width: 100%;
   border-top: 2px solid rgb(255, 255, 255, 0.5);
   padding-top: 20px;
-
 }
 .container {
   max-width: 1400px;
@@ -25,6 +24,15 @@
     0 0 82px rgb(72, 12, 89), 0 0 92px rgb(65, 11, 81),
     0 0 102px rgb(70, 11, 86), 0 0 151px rgb(86, 15, 105);
 }
+.dayTitle {
+  font-family: "Orbitron";
+  text-align: center;
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 7px rgb(200, 140, 194), 0 0 10px rgb(173, 114, 178),
+    0 0 21px rgb(207, 146, 199), 0 0 42px rgb(32, 6, 40),
+    0 0 82px rgb(72, 12, 89), 0 0 92px rgb(65, 11, 81),
+    0 0 102px rgb(70, 11, 86), 0 0 151px rgb(86, 15, 105);
+}
 .buttonContainer {
   display: flex;
   justify-content: center;
@@ -35,7 +43,7 @@
 .badget {
   width: 140px;
   height: 38px;
-  border: 1px solid rgb(180, 179, 179);
+  border: 1px solid rgb(255, 255, 255);
   display: flex;
   gap: 10px;
   align-items: center;
@@ -43,7 +51,39 @@
   border-radius: 5px;
   cursor: pointer;
 }
+.badget:hover {
+  border: 1px solid #00f1fd;
+  -webkit-box-shadow: -1px -3px 23px 6px rgba(0, 241, 253, 0.18);
+  -moz-box-shadow: -1px -3px 23px 6px rgba(0, 241, 253, 0.18);
+  box-shadow: -1px -3px 23px 6px rgba(0, 241, 253, 0.18);
+}
+.badget:hover .textButton {
+  color: #00f1fd;
+}
+.badget:hover .svg {
+  fill: #b621fe;
+}
+.dayBadget {
+  width: 140px;
+  height: 38px;
+  border: 1px solid rgb(255, 255, 255);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 0 8px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.dayBadget:hover {
+  border: 1px solid rgb(255, 255, 255);
+  -webkit-box-shadow: -1px -3px 23px 6px rgba(255, 255, 255, 0.5);
+  -moz-box-shadow: -1px -3px 23px 6px rgba(255, 255, 255, 0.5);
+  box-shadow: -1px -3px 23px 6px rgba(255, 255, 255, 0.5);
+}
 
+.dayBadget:hover .svg {
+  fill: #b621fe;
+}
 .svgApple {
   background-image: url("./APPLE.svg");
   width: 24px;
@@ -59,19 +99,13 @@
   display: flex;
   justify-content: flex-start;
   font-family: "Open sans", sans-serif;
-  color: #a7a7a7;
+  color: #ffffff;
 }
-.badget:hover {
-  border: 1px solid #00f1fd;
-  -webkit-box-shadow: -1px -3px 23px 6px rgba(0, 241, 253, 0.18);
-  -moz-box-shadow: -1px -3px 23px 6px rgba(0, 241, 253, 0.18);
-  box-shadow: -1px -3px 23px 6px rgba(0, 241, 253, 0.18);
-}
-.badget:hover .textButton {
-  color: #00f1fd;
-}
-.badget:hover .svg {
-  fill: #b621fe;
+.dayTextButton {
+  display: flex;
+  justify-content: flex-start;
+  font-family: "Open sans", sans-serif;
+  color: rgb(255, 255, 255);
 }
 
 .icon {

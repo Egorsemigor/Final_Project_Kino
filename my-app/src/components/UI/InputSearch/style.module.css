@@ -1,16 +1,41 @@
 .search {
   font-family: "Open Sans", sans-serif;
-  font-size: 14px;
+  font-size: 25px;
   background: transparent;
   font-weight: 500;
   color: #00f1fd;
-  width: 400px;
-  height: 40px;
-  border: 2px solid #00f1fd;
-  border-radius: 10px;
+  width: 450px;
+  height: 60px;
+  border: 3px solid #00f1fd;
+  border-radius: 20px;
   background-repeat: no-repeat;
   background-image: url("./lens.svg");
   background-position: 2% 50%;
   outline: none;
   padding-left: 40px;
+}
+.daySearch {
+  font-family: "Open Sans", sans-serif;
+  font-size: 25px;
+  background: rgba(254, 254, 254, 0);
+  font-weight: 500;
+  color: white;
+  width: 450px;
+  height: 60px;
+  border: 3px solid rgb(126, 82, 118);
+  border-radius: 20px;
+  background-image: url("./lensWhite.svg");
+  background-position: 2% 50%;
+  outline: none;
+  padding-left: 40px;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 500px) {
+  .search {
+    width: 320px;
+  }
+  .daySearch {
+    width: 320px;
+  }
 }
