@@ -4,8 +4,7 @@
   margin: 0;
 }
 .InputTitle {
-  font-family: "Raleway";
-  font-style: normal;
+  font-family: "Orbitron";
   font-weight: 500;
   font-size: 25px;
   line-height: 29px;
@@ -19,14 +18,14 @@
   justify-content: center;
   align-items: center;
 }
-.darkInputTitle {
-  font-family: "Raleway";
+.dayInputTitle {
+  font-family: "Orbitron";
   font-style: normal;
   font-weight: 500;
   font-size: 25px;
   line-height: 29px;
   letter-spacing: 0.05em;
-  color: white;
+  color: #f8f8f8;
   margin-bottom: 14px;
   text-align: left;
 }
@@ -39,14 +38,7 @@
   background-color: transparent;
   padding-top: 63px;
 }
-.darkContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 41px;
-  padding-top: 63px;
-}
+
 .error {
   color: red;
   font-size: 16px;
@@ -58,34 +50,43 @@
   margin-bottom: 59px;
 }
 .text {
-  font-family: "Raleway";
+  font-family: "Orbitron";
   font-weight: 400;
   font-size: 25px;
   line-height: 134%;
   letter-spacing: 0.03em;
-  color: #98cde7;
+  color: #ffffff;
   margin-bottom: 25px;
 }
 .link {
-  font-family: "Raleway";
+  font-family: "Orbitron";
   font-weight: 700;
   font-size: 25px;
   line-height: 134%;
   letter-spacing: 0.03em;
   color: #016efc;
-
   text-decoration: none;
 }
 form {
   margin: 0 auto;
 }
-@media (max-width: 400px) {
+@media (max-width: 700px) {
   .text {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 110%;
   }
   .link {
-    font-size: 18px;
+    font-size: 20px;
+    line-height: 110%;
+  }
+}
+@media (max-width: 480px) {
+  .text {
+    font-size: 11px;
+    line-height: 110%;
+  }
+  .link {
+    font-size: 14px;
     line-height: 110%;
   }
 }

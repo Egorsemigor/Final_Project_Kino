@@ -27,30 +27,29 @@
   font-family: "Cinzel";
   font-size: 20px;
   margin-bottom: 20px;
-  color: rgb(205, 197, 203);
+  color: #ffffff;
   display: flex;
   justify-content: center;
+  text-align: center;
 }
 
 .filmTitle {
-  color: aliceblue;
+  color: #ffffff;
   margin-bottom: 15px;
   border-radius: 18px;
   /* -webkit-box-shadow: 4px 3px 15px 10px rgba(203, 181, 214, 0.1);
   -moz-box-shadow: 4px 3px 15px 10px rgba(203, 181, 214, 0.1);
   box-shadow: 4px 3px 15px 10px rgba(203, 181, 214, 0.1); */
   display: flex;
-
+  padding: 0;
   align-items: center;
-  width: 400px;
-  height: 70px;
 }
 .video {
   width: 740px;
   height: 360px;
 }
 .secondBlock {
-  color: rgb(205, 197, 203);
+  color: #ffffff;
   font-family: "Open Sans";
 }
 .genres {
@@ -106,14 +105,14 @@
   color: rgba(244, 232, 241, 0.699);
   font-size: 18px;
   font-weight: 500;
-  color: #a5a1b2;
+  color: #ffffff;
 }
 
 .budget {
   color: rgba(244, 232, 241, 0.699);
   font-size: 14px;
   font-weight: 500;
-  color: #a5a1b2;
+  color: #ffffff;
 }
 .videoFlex {
   width: 100%;
@@ -121,6 +120,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 40px;
 }
 .video {
   width: 82vw;
@@ -128,9 +128,39 @@
   text-align: center;
   border-radius: 30px;
 }
+.arrow {
+  background-image: url("./arrow.svg");
+  background-repeat: no-repeat;
+  cursor: pointer;
+  height: 50px;
+  width: 100%;
+  background-position: left;
+}
+
+.arrow:hover {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+}
 @media (max-width: 840px) {
   .flexBlock {
     display: block;
+    margin-bottom: 70px;
+    margin: 0 auto;
+  }
+  .firstBlock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 70px;
+  }
+  .secondBlock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
     margin-bottom: 70px;
   }
 }
@@ -151,9 +181,6 @@
   }
   .filmTitle {
     border-radius: 13px;
-
-    width: 310px;
-    height: 60px;
   }
 
   .firstBlock img {

@@ -32,16 +32,16 @@ ul .menuItem {
   width: 100%;
   height: 5px;
   border-radius: 2.5px;
-  background-color: #005cf1;
+  background-color: rgb(126, 82, 118);
   transition-duration: 0.25s;
 }
 .menuBtn > span::before {
   content: "";
-  top: -8px;
+  top: -7px;
 }
 .menuBtn > span::after {
   content: "";
-  top: 8px;
+  top: 7px;
 }
 
 .menuBox {
@@ -66,7 +66,6 @@ ul .menuItem {
   font-family: "Cinzel";
   display: flex;
   justify-content: center;
-  font-family: "Open Sans";
   padding-top: 18px;
   padding-bottom: 18px;
   font-weight: 600;
@@ -99,6 +98,23 @@ ul .menuItem {
   visibility: visible;
   top: 0;
   left: 0;
+}
+div ul .active {
+  font-family: "Cinzel";
+  display: flex;
+  justify-content: center;
+  padding-top: 18px;
+  padding-bottom: 18px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 19px;
+  text-transform: capitalize;
+  text-decoration: none;
+  color: #d31a1a;
+  transition-duration: 0.25s;
+}
+.active:hover {
+  background-color: #3b1648c5;
 }
 
 /*Burger menu*/

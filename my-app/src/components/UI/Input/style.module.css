@@ -3,30 +3,72 @@
 }
 .search {
   font-family: "Open Sans", sans-serif;
-  font-size: 14px;
+  font-size: 25px;
   background: transparent;
   font-weight: 500;
   color: #00f1fd;
   width: 400px;
-  height: 40px;
-  border: 2px solid #00f1fd;
-  border-radius: 10px;
+  height: 60px;
+  border: 3px solid #00f1fd;
+  border-radius: 20px;
+  outline: none;
+  padding-left: 10px;
+}
+.daySearch {
+  font-family: "Open Sans", sans-serif;
+  font-size: 25px;
+  background: rgba(254, 254, 254, 0);
+  font-weight: 500;
+  color: white;
+  width: 400px;
+  height: 60px;
+  border: 3px solid rgb(126, 82, 118);
+  border-radius: 20px;
   outline: none;
   padding-left: 10px;
 }
 
 .error {
   border: 3px solid red;
-  border-radius: 10px;
+  border-radius: 20px;
 }
 .text {
+  font-size: 20px;
   position: absolute;
   left: 10%;
-  bottom: -42px;
+  bottom: -45px;
   color: red;
+}
+.eye {
+  cursor: pointer;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 30px;
+  height: 30px;
+  background-image: url("./open.svg");
+}
+.closedEye {
+  cursor: pointer;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  width: 30px;
+  height: 30px;
+  background-image: url("./Close.svg");
 }
 @media (max-width: 420px) {
   .search {
     width: 320px;
+  }
+  .daySearch {
+    width: 320px;
+  }
+  .text {
+    font-size: 14px;
+    position: absolute;
+    left: 10%;
+    bottom: -42px;
+    color: red;
   }
 }

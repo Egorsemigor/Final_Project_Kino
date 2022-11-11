@@ -1,11 +1,13 @@
 import style from "./style.module.css";
 import { ICard } from "../../Types/interface";
 import { FilmCard } from "../FilmCard/FilmCard";
-interface IList {
+import { useNavigate } from "react-router-dom";
+export interface IList {
   films: ICard[];
   onClickFilm: (id: number) => void;
 }
 export const FilmList = ({ films, onClickFilm }: IList) => {
+  const navigate = useNavigate();
   return (
     <div className={style.container}>
       <div className={style.adaptiveGrid}>

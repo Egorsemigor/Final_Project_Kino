@@ -17,6 +17,7 @@ import { InputSearch } from "../../UI/InputSearch/InputSearch";
 import style from "./style.module.css";
 export const Header = () => {
   const navigate = useNavigate();
+
   // const [search, setSearch] = useState("");
   const { user, setUser } = useContext(Context);
   // const handleInput: ChangeEventHandler<HTMLInputElement> = (event) => {
@@ -25,23 +26,22 @@ export const Header = () => {
   // useEffect(() => {
   //   searchFilms(search).then((values) => {});
   // }, [search]);
-
-  const mode = true;
-
-  // const [isDark, setIsDark] = useState(false);
+  const dispatch = useDispatch();
+  const mode = useSelector(
+    (state: { mode: { mode: boolean } }) => state.mode.mode
+  );
   const handleOnChange = () => {
-    // if (isDark) {
-    //   setIsDark(false);
-    // } else {
-    //   setIsDark(true);
-    // }
-    // dispatch({ type: "ADD_MODE", payload: mode });
+    dispatch({ type: "CHANGE_MODE", payload: mode });
   };
+  localStorage.setItem("mode", String(mode));
+
   const logOut = () => {
     setUser(null);
-    localStorage.clear();
     navigate("/main");
+    localStorage.removeItem("refresh");
+    localStorage.removeItem("access");
   };
+
   return (
     <header className={style.header}>
       <div className={style.container}>
@@ -54,7 +54,7 @@ export const Header = () => {
           </div>
 
           <Link style={{ textDecoration: "none" }} to={"/main"}>
-            <div className={style.logo}>MovieHouse</div>
+            <div className={mode ? style.logo : style.dayLogo}>MovieHouse</div>
           </Link>
           {/* <InputSearch
             value={search}

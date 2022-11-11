@@ -69,15 +69,17 @@ export const AllFilms = () => {
           <img src={loader} />
         </div>
       ) : (
-        <FilmList films={films} onClickFilm={navigateToFilm} />
+        <>
+          <FilmList films={films} onClickFilm={navigateToFilm} />
+          <div className={style.buttonLoadMore}>
+            <Button
+              type={"dontAdaptive"}
+              text={"Load more films"}
+              onClick={loadMore}
+            />
+          </div>
+        </>
       )}
-      <div className={style.buttonLoadMore}>
-        <Button
-          type={"dontAdaptive"}
-          text={"Load more films"}
-          onClick={loadMore}
-        />
-      </div>
     </div>
   );
 };
