@@ -30,7 +30,7 @@ export const SelectedFilm = (props: ICard) => {
       })
       .then((films) => {
         setSimilar(films);
-        console.log(films);
+        // console.log(films);
       });
   }, []);
   useEffect(() => {

@@ -18,7 +18,7 @@ export const SimilarFilms = (props: ICard) => {
       })
       .then((films) => {
         setSimilar(films);
-        console.log(films);
+        // console.log(films);
       });
   }, []);
   const navigate = useNavigate();
