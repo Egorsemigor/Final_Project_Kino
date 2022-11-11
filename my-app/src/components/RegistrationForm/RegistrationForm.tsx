@@ -138,8 +138,8 @@ export const RegistrationForm = () => {
   );
 
   return (
-    <div className={values.isDark ? style.darkContainer : style.container}>
-      <form style={{ margin: "0 auto" }} onSubmit={handleSubmit}>
+    <div className={style.container}>
+      <form onSubmit={handleSubmit}>
         <div className={style.margin}>
           <div className={style.inputMargin}>
             <p className={mode ? style.InputTitle : style.dayInputTitle}>
@@ -168,6 +168,7 @@ export const RegistrationForm = () => {
               Password
             </p>
             <Input
+              type="password"
               value={password}
               placeholder={""}
               onChange={handlerPassword}
@@ -179,6 +180,7 @@ export const RegistrationForm = () => {
               Confirm Password
             </p>
             <Input
+              type="password"
               value={confirmPassword}
               placeholder={""}
               onChange={handlerComfirmPassword}

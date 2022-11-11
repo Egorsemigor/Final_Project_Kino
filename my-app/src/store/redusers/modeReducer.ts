@@ -1,5 +1,5 @@
 const defaultState: { mode: boolean } = {
-  mode: true,
+  mode: localStorage.getItem("mode") === "false" ? false : true,
 };
 export const modeReducer = (
   state = defaultState,

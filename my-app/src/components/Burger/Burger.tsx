@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { genresArr } from "./genresArr";
 import style from "./style.module.css";
 
@@ -11,14 +11,17 @@ export const Burger = () => {
       </label>
 
       <ul className={style.menuBox}>
-        {genresArr.map((genre: string) => {
-          return (
-            <Link className={style.menuItem} to={`/genres/:${genre}`}>
-              {" "}
-              {genre}
-            </Link>
-          );
-        })}
+        {genresArr.map((genre: string) => (
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? style.active : style.menuItem
+            }
+            to={`/genres/${genre.toLowerCase()}`}
+          >
+            {" "}
+            {genre}
+          </NavLink>
+        ))}
       </ul>
     </div>
   );

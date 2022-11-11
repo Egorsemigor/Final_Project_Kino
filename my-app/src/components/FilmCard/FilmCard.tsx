@@ -23,12 +23,15 @@ export const FilmCard = (props: ICard) => {
     <>
       {img ? (
         <div className={style.card}>
+          <span className={style.average}>{props.vote_average}</span>
           <img onError={handleError} src={img} className={style.posterImg} />
           <h2 className={style.title}>{props.title}</h2>
           <p className={style.genres}>{props.genres.join(", ")}</p>
         </div>
       ) : (
         <div className={style.card}>
+          <span className={style.average}>{props.vote_average}</span>
+
           <img src={image} className={style.posterImg} />
           <h2 className={style.title}>{props.title}</h2>
           <p className={style.genres}>{props.genres.join(", ")}</p>

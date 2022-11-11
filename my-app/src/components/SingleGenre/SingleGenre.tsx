@@ -13,9 +13,9 @@ export const SingleGenre = () => {
 
   const { genre } = useParams();
   useEffect(() => {
-    setIsLoading(true)
+    setIsLoading(true);
     if (genre) {
-      fetchGenres(genre.slice(1))
+      fetchGenres(genre)
         .then((film) => {
           setGenredFilms(film.data);
         })
@@ -23,6 +23,7 @@ export const SingleGenre = () => {
           setIsLoading(false);
         });
     }
+    console.log(genre);
   }, [genre]);
   const navigateToFilm = (id: number) => {
     navigate(`/selected/${id}`);
@@ -39,8 +40,8 @@ export const SingleGenre = () => {
 
   return (
     <>
-   { typeof genre ==='string' ? <Title genre={ genre.slice(1)} />: 'Genre'}
-      
+      {typeof genre === "string" ? <Title genre={genre} /> : "Genre"}
+
       {isLoading ? (
         <div
           style={{

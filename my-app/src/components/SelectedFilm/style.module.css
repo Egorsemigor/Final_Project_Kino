@@ -30,6 +30,7 @@
   color: #ffffff;
   display: flex;
   justify-content: center;
+  text-align: center;
 }
 
 .filmTitle {
@@ -40,10 +41,8 @@
   -moz-box-shadow: 4px 3px 15px 10px rgba(203, 181, 214, 0.1);
   box-shadow: 4px 3px 15px 10px rgba(203, 181, 214, 0.1); */
   display: flex;
-
+  padding: 0;
   align-items: center;
-  width: 400px;
-  height: 70px;
 }
 .video {
   width: 740px;
@@ -121,6 +120,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 40px;
 }
 .video {
   width: 82vw;
@@ -128,9 +128,39 @@
   text-align: center;
   border-radius: 30px;
 }
+.arrow {
+  background-image: url("./arrow.svg");
+  background-repeat: no-repeat;
+  cursor: pointer;
+  height: 50px;
+  width: 100%;
+  background-position: left;
+}
+
+.arrow:hover {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2);
+}
 @media (max-width: 840px) {
   .flexBlock {
     display: block;
+    margin-bottom: 70px;
+    margin: 0 auto;
+  }
+  .firstBlock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 70px;
+  }
+  .secondBlock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
     margin-bottom: 70px;
   }
 }
@@ -151,9 +181,6 @@
   }
   .filmTitle {
     border-radius: 13px;
-
-    width: 310px;
-    height: 60px;
   }
 
   .firstBlock img {

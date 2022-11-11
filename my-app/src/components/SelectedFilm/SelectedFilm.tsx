@@ -9,17 +9,29 @@ import { fetchImg } from "../../fetch/fetchImg";
 import { fetchTrailer } from "../../fetch/fetchTrailer";
 import Iframe from "react-iframe";
 import IframeResizer from "iframe-resizer-react";
+import { Navigate, useNavigate } from "react-router-dom";
+import { fetchSimilarGenres } from "../../fetch/fetchGenres";
+import { FilmCard } from "../FilmCard/FilmCard";
+import { SimilarFilms } from "../SimilarFilms/SimilarFilms";
 
 export const SelectedFilm = (props: ICard) => {
   const [img, setImage] = useState("");
   const [imdbID, setImdbID] = useState("");
   const [trailer, setTrailer] = useState("");
-  const [width, setWidth] = useState(0);
+  const [similar, setSimilar] = useState([]);
   useEffect(() => {
     fetchImg(props.title).then((values) => {
       setImage(values.Poster);
       setImdbID(values.imdbID);
     });
+    fetchSimilarGenres(props.genres[0])
+      .then((films) => {
+        return films.data.filter((film: ICard) => film.title !== props.title);
+      })
+      .then((films) => {
+        setSimilar(films);
+        console.log(films);
+      });
   }, []);
   useEffect(() => {
     fetchTrailer(imdbID).then((values) => {
@@ -31,7 +43,10 @@ export const SelectedFilm = (props: ICard) => {
   const handleError: ReactEventHandler<HTMLImageElement> = () => {
     setImage(pic);
   };
-
+  const navigate = useNavigate();
+  const navigateToFilm = (id: number) => {
+    navigate(`/selected/${id}`);
+  };
   // const [screenSize, getDimension] = useState({
   //   dynamicWidth: window.innerWidth,
   //   dynamicHeight: window.innerHeight,
@@ -57,6 +72,12 @@ export const SelectedFilm = (props: ICard) => {
         <div className={style.container}>
           <div className={style.flexBlock}>
             <div className={style.firstBlock}>
+              <div
+                onClick={() => {
+                  navigate(-1);
+                }}
+                className={style.arrow}
+              ></div>
               <div className={style.tagline}>{props.tagline}</div>
               {img ? (
                 <img className={style.image} src={img} onError={handleError} />
@@ -75,7 +96,6 @@ export const SelectedFilm = (props: ICard) => {
                 What is this movie about: {props.overview}
               </div>
               <div className={style.genres}>
-                {" "}
                 Genres: {props.genres.join(", ")}
               </div>
 
@@ -102,9 +122,9 @@ export const SelectedFilm = (props: ICard) => {
               // ></iframe>
               <iframe
                 allowFullScreen={true}
-                src={`${trailer}?width=320`}
-                width="320"
-                height="320"
+                src={`${trailer}?width=1850`}
+                width="850"
+                height="540"
               />
             ) : (
               <ReactPlayer
@@ -112,6 +132,21 @@ export const SelectedFilm = (props: ICard) => {
               />
             )}
           </div>
+          <SimilarFilms
+            id={props.id}
+            title={props.title}
+            tagline={""}
+            vote_average={props.vote_average}
+            vote_count={0}
+            release_date={""}
+            poster_path={""}
+            overview={""}
+            budget={0}
+            revenue={0}
+            runtime={0}
+            genres={props.genres}
+            onClickFilm={navigateToFilm}
+          />
         </div>
       </div>
     </>
