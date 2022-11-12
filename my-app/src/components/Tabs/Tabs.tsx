@@ -34,7 +34,6 @@ export const Tab = () => {
           justifyContent: "center",
           gap: "30px",
           marginBottom: "50px",
-          paddingLeft: "20px",
         }}
       >
         <TabButton

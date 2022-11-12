@@ -41,6 +41,7 @@ export const Header = () => {
     localStorage.removeItem("refresh");
     localStorage.removeItem("access");
   };
+  console.log(user);
 
   return (
     <header className={style.header}>
@@ -63,7 +64,13 @@ export const Header = () => {
           /> */}
 
           {user ? (
-            <Button type={"adaptive"} text={"Log Out"} onClick={logOut} />
+            <div className={style.buttonContainer}>
+              <div className={mode ? style.user : style.dayUser}>
+                {user.username}
+              </div>
+
+              <Button type={"adaptive"} text={"Log Out"} onClick={logOut} />
+            </div>
           ) : (
             <div className={style.buttonContainer}>
               <Button
