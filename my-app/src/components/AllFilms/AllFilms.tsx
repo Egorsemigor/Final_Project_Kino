@@ -1,5 +1,5 @@
 import { ChangeEventHandler, useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { fetchFilms } from "../../fetch/fetchFilms";
 import { searchFilms } from "../../fetch/searchFilms";
@@ -12,8 +12,12 @@ import { Carusel } from "../UI/Caurusel/Caurusel";
 import { InputSearch } from "../UI/InputSearch/InputSearch";
 import style from "./style.module.css";
 import loader from "./loader1.svg";
+import { TState } from "../../store/store";
+import { setAllFilms } from "../../store/acrions/actions";
 export const AllFilms = () => {
-  const [films, setFilms] = useState<ICard[]>([]);
+  // const [films, setFilms] = useState<ICard[]>([]);
+  const films = useSelector((state: TState) => state.filmsReducer.allFilms);
+  const dispatch = useDispatch();
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
   // useEffect(() => {
@@ -24,7 +28,8 @@ export const AllFilms = () => {
   // }, []);
   const loadMore = () => {
     return fetchFilms(films.length, search).then((film) => {
-      setFilms(films.concat(film.data));
+      // setFilms(films.concat(film.data));
+      dispatch(setAllFilms(films.concat(film.data)));
     });
   };
 
@@ -37,7 +42,8 @@ export const AllFilms = () => {
     setIsLoading(true);
     searchFilms(search)
       .then((values) => {
-        setFilms(values.data);
+        // setFilms(values.data);
+        dispatch(setAllFilms(values.data));
       })
       .finally(() => {
         setIsLoading(false);
@@ -50,7 +56,6 @@ export const AllFilms = () => {
 
   return (
     <div>
-      <Carusel />
       <div className={style.inputSearch}>
         <InputSearch
           value={search}

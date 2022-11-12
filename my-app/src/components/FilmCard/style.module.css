@@ -5,7 +5,7 @@
   cursor: pointer;
   margin: 0 auto;
   margin-bottom: 25px;
-  height: 395px;
+  height: 420px;
 }
 .average {
   position: absolute;
@@ -43,8 +43,15 @@
   font-size: 12px;
   font-weight: 400;
   color: rgb(255, 255, 255);
+  width: 110px;
 }
-
+.iconsFlex {
+  position: absolute;
+  bottom: 0%;
+  right: 5%;
+  display: flex;
+  gap: 10px;
+}
 @media (max-width: 470px) {
   .card {
     margin-bottom: 20px;

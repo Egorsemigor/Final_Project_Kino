@@ -31,6 +31,7 @@ export const FilmList = ({ films, onClickFilm }: IList) => {
                 revenue={item.revenue}
                 runtime={item.runtime}
                 genres={item.genres}
+                liked={item.liked}
               />
             </div>
           );
