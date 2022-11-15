@@ -1,0 +1,48 @@
+.primary {
+  width: 170px;
+  height: 45px;
+  color: #fff;
+  border-radius: 10px;
+  background-color: rgb(126, 101, 149);
+  padding: 10px 25px;
+  font-family: "Orbitron", sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 42px;
+  padding: 0;
+  border: none;
+}
+
+.secondary {
+  width: 170px;
+  height: 45px;
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px 25px;
+  font-family: "Orbitron", sans-serif;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(93, 82, 91);
+  line-height: 42px;
+  padding: 0;
+  border: none;
+}
+
+.primary:hover {
+ 
+  background-color: rgb(94, 52, 133);
+ 
+}
+
+.secondary:hover {
+ 
+  background-color: rgb(74, 66, 73);
+ 
+}
+

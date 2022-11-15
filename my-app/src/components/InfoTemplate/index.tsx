@@ -18,7 +18,7 @@ export const InfoTemplate = ({
   return (
     <div className={style.infoMain}>
       <h2 className={style.title}>{title}</h2>
-      <p className={values.isDark ? style.darkBody : style.body}>{body}</p>
+      <p className={style.darkBody}>{body}</p>
       <Button type={"dontAdaptive"} text={textButton} onClick={onClick} />
     </div>
   );

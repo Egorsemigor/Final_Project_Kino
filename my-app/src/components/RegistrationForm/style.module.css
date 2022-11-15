@@ -38,14 +38,7 @@
   background-color: transparent;
   padding-top: 63px;
 }
-.darkContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 41px;
-  padding-top: 63px;
-}
+
 .error {
   color: red;
   font-size: 16px;

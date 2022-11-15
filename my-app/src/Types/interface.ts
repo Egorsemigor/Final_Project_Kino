@@ -11,4 +11,7 @@ export interface ICard {
   revenue: number;
   runtime: number;
   genres: string[];
+  onClickFilm?: (id: number) => void;
+  liked?: boolean;
+  marked?: boolean;
 }

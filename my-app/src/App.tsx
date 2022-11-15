@@ -8,20 +8,16 @@ import { SelectedFilm } from "./components/SelectedFilm/SelectedFilm";
 import { IUser } from "./Types/auth";
 import { getUser } from "./fetch/getUser";
 import { useSelector } from "react-redux";
+import loader from "./loader1.svg";
 export const Context = createContext<{
-  isDark: boolean;
-  setIsDark: (value: boolean) => void;
   user: IUser | null;
   setUser: (value: IUser | null) => void;
 }>({
-  isDark: false,
-  setIsDark: () => {},
   user: null,
   setUser: (value: IUser | null) => {},
 });
 const access = localStorage.getItem("access");
 export function App() {
-  const [isDark, setIsDark] = useState(false);
   const [user, setUser] = useState<IUser | null>(null);
   const [isReady, setIsReady] = useState(!access);
   useEffect(() => {
@@ -50,19 +46,25 @@ export function App() {
     (state: { mode: { mode: boolean } }) => state.mode.mode
   );
   return (
-    <div className={mode ? "App" : "dayApp"}>
-      <BrowserRouter>
-        <Context.Provider
-          value={{
-            isDark: isDark,
-            setIsDark: setIsDark,
-            user: user,
-            setUser: setUser,
-          }}
-        >
-          <RootRouter />
-        </Context.Provider>
-      </BrowserRouter>
-    </div>
+    <>
+      {isReady ? (
+        <div className={mode ? "App" : "dayApp"}>
+          <BrowserRouter>
+            <Context.Provider
+              value={{
+                user: user,
+                setUser: setUser,
+              }}
+            >
+              <RootRouter />
+            </Context.Provider>
+          </BrowserRouter>
+        </div>
+      ) : (
+        <div className={"loader"}>
+          <img src={loader} alt="" />
+        </div>
+      )}
+    </>
   );
 }

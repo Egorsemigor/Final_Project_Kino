@@ -22,3 +22,9 @@
     rgb(165, 179, 237, 0.8) 98%
   );
 }
+.loader {
+  height: 723px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

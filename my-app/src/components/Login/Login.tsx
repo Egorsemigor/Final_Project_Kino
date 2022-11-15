@@ -61,7 +61,7 @@ export const Login = () => {
     (state: { mode: { mode: boolean } }) => state.mode.mode
   );
   return (
-    <div className={values.isDark ? style.darkContainer : style.container}>
+    <div className={style.container}>
       <form onSubmit={handleSubmit}>
         <div className={style.margin}>
           <div className={style.inputMargin}>
@@ -78,6 +78,7 @@ export const Login = () => {
               value={password}
               placeholder={""}
               onChange={handlerPassword}
+              type={'password'}
             />
           </div>
         </div>

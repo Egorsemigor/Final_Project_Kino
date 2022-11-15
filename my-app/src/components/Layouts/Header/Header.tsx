@@ -17,6 +17,7 @@ import { InputSearch } from "../../UI/InputSearch/InputSearch";
 import style from "./style.module.css";
 export const Header = () => {
   const navigate = useNavigate();
+
   // const [search, setSearch] = useState("");
   const { user, setUser } = useContext(Context);
   // const handleInput: ChangeEventHandler<HTMLInputElement> = (event) => {
@@ -29,16 +30,19 @@ export const Header = () => {
   const mode = useSelector(
     (state: { mode: { mode: boolean } }) => state.mode.mode
   );
-
   const handleOnChange = () => {
     dispatch({ type: "CHANGE_MODE", payload: mode });
-    console.log(mode);
   };
+  localStorage.setItem("mode", String(mode));
+
   const logOut = () => {
     setUser(null);
-    localStorage.clear();
     navigate("/main");
+    localStorage.removeItem("refresh");
+    localStorage.removeItem("access");
   };
+  console.log(user);
+
   return (
     <header className={style.header}>
       <div className={style.container}>
@@ -60,7 +64,13 @@ export const Header = () => {
           /> */}
 
           {user ? (
-            <Button type={"adaptive"} text={"Log Out"} onClick={logOut} />
+            <div className={style.buttonContainer}>
+              <div className={mode ? style.user : style.dayUser}>
+                {user.username}
+              </div>
+
+              <Button type={"adaptive"} text={"Log Out"} onClick={logOut} />
+            </div>
           ) : (
             <div className={style.buttonContainer}>
               <Button

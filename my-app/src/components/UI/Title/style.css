@@ -54,3 +54,14 @@ h2.funny-title {
   -moz-animation: move-background 40s infinite linear alternate;
   animation: move-background 40s infinite linear alternate;
 }
+@media (max-width: 500px) {
+  h2.funny-title {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 400px) {
+  h2.funny-title {
+    font-size: 35px;
+  }
+}

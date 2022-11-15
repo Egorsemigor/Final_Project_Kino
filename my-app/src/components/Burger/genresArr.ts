@@ -8,5 +8,5 @@ export const genresArr: string[] = [
   "Thriller",
   "Animation",
   "Family",
-  "Science Fiction",
+  "History",
 ];
