@@ -1,10 +1,6 @@
 import style from "./style.module.css";
-// interface IButton {
-//   text: string;
-//   onClick: () => void;
-// }
+
 import { MouseEventHandler, useContext } from "react";
-import { Context } from "../../../App";
 import { useSelector } from "react-redux";
 
 type ButtonColorType = "adaptive" | "dontAdaptive";

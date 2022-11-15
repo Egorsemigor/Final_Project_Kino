@@ -1,10 +1,9 @@
 import { useEffect, useState } from "react";
-import { Button } from "../../components/UI/Button/Button";
 import { useNavigate, useParams } from "react-router-dom";
 import { FilmList } from "../../components/FilmList/FilmList";
 import { Title } from "../../components/UI/Title/Title";
 import { fetchGenres } from "../../fetch/fetchGenres";
-import loader from "./loader1.svg";
+import loader from "../../assets/img/loader.svg";
 
 export const SingleGenre = () => {
   const [genredFilms, setGenredFilms] = useState([]);
@@ -55,11 +54,6 @@ export const SingleGenre = () => {
       ) : (
         <FilmList films={genredFilms} onClickFilm={navigateToFilm} />
       )}
-      {/* <Button
-        type={"dontAdaptive"}
-        text={"Load more films"}
-        onClick={loadMore}
-      /> */}
     </>
   );
 };

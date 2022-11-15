@@ -1,0 +1,7 @@
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-bottom: 50px;
+  padding: 0 15px;
+}

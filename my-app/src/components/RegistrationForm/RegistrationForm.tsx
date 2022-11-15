@@ -7,7 +7,6 @@ import React, {
 import { Input } from "../UI/Input/Input";
 import { Button } from "../UI/Button/Button";
 import style from "./style.module.css";
-// import { Context } from "../../App";
 import {
   validateConfirmPassword,
   validateEmail,
@@ -20,7 +19,6 @@ import { registerUser } from "../../fetch/registerUser";
 import { Context } from "../../App";
 import { useSelector } from "react-redux";
 export const RegistrationForm = () => {
-  const values = useContext(Context);
   const [userName, setUserName] = useState("");
   const [userError, setUserError] = useState("");
   const [email, setEmail] = useState("");

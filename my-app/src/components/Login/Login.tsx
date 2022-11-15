@@ -7,7 +7,6 @@ import React, {
 import { Input } from "../../components/UI/Input/Input";
 import { Button } from "../UI/Button/Button";
 import style from "./style.module.css";
-// import { Link, Navigate, useNavigate } from "react-router-dom";
 import { getUser } from "../../fetch/getUser";
 import { login } from "../../fetch/login";
 import { Context } from "../../App";
