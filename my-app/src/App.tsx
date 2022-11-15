@@ -6,6 +6,7 @@ import { IUser } from "./Types/auth";
 import { getUser } from "./fetch/getUser";
 import { useSelector } from "react-redux";
 import loader from "./assets/img/loader.svg";
+import { TState } from "./store/store";
 export const Context = createContext<{
   user: IUser | null;
   setUser: (value: IUser | null) => void;
@@ -39,9 +40,8 @@ export function App() {
         });
     }
   }, []);
-  const mode = useSelector(
-    (state: { mode: { mode: boolean } }) => state.mode.mode
-  );
+  const mode = useSelector((state: TState) => state.modeReducer.mode);
+
   return (
     <>
       {isReady ? (

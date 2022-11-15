@@ -14,6 +14,7 @@ import { fetchImg } from "../../fetch/fetchImg";
 import { ACTIONS } from "../../store/constants";
 import { Like } from "../../assets";
 import { Context } from "../../App";
+import { TState } from "../../store/store";
 
 export const FilmCard = (props: ICard) => {
   const [img, setImage] = useState<string | null>("");
@@ -32,9 +33,8 @@ export const FilmCard = (props: ICard) => {
   const handleError: ReactEventHandler<HTMLImageElement> = () => {
     setImage(null);
   };
-  const mode = useSelector(
-    (state: { mode: { mode: boolean } }) => state.mode.mode
-  );
+  const mode = useSelector((state: TState) => state.modeReducer.mode);
+
   return (
     <>
       {img ? (

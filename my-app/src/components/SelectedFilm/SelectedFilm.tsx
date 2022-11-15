@@ -13,26 +13,19 @@ export const SelectedFilm = (props: ICard) => {
   const [img, setImage] = useState("");
   const [imdbID, setImdbID] = useState("");
   const [trailer, setTrailer] = useState("");
-  const [similar, setSimilar] = useState([]);
+  const [id, setID] = useState(props.id);
   useEffect(() => {
     fetchImg(props.title).then((values) => {
       setImage(values.Poster);
       setImdbID(values.imdbID);
     });
-    fetchSimilarGenres(props.genres[0])
-      .then((films) => {
-        return films.data.filter((film: ICard) => film.title !== props.title);
-      })
-      .then((films) => {
-        setSimilar(films);
-      });
-  }, []);
+  }, [id]);
   useEffect(() => {
     fetchTrailer(imdbID).then((values) => {
       setTrailer(values.linkEmbed);
       console.log(values.linkEmbed);
     });
-  }, [imdbID]);
+  }, [imdbID, id]);
 
   const handleError: ReactEventHandler<HTMLImageElement> = () => {
     setImage(pic);

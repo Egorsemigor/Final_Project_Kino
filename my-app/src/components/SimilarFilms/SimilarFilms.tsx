@@ -3,12 +3,10 @@ import { useNavigate } from "react-router-dom";
 import { fetchSimilarGenres } from "../../fetch/fetchGenres";
 import { ICard } from "../../Types/interface";
 import { FilmCard } from "../FilmCard/FilmCard";
-import { Title } from "../UI/Title/Title";
 import style from "./style.module.css";
 export const SimilarFilms = (props: ICard) => {
   const [similar, setSimilar] = useState([]);
   useEffect(() => {
-  
     fetchSimilarGenres(props.genres[0])
       .then((films) => {
         return films.data.filter((film: ICard) => film.title !== props.title);
@@ -16,7 +14,7 @@ export const SimilarFilms = (props: ICard) => {
       .then((films) => {
         setSimilar(films);
       });
-  }, []);
+  }, [props.id]);
   return (
     <>
       <h1>Simular Films</h1>
@@ -42,6 +40,7 @@ export const SimilarFilms = (props: ICard) => {
                 revenue={0}
                 runtime={0}
                 genres={film.genres}
+                liked={film.liked}
               />
             </div>
           );

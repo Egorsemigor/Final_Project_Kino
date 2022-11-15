@@ -18,6 +18,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { registerUser } from "../../fetch/registerUser";
 import { Context } from "../../App";
 import { useSelector } from "react-redux";
+import { TState } from "../../store/store";
 export const RegistrationForm = () => {
   const [userName, setUserName] = useState("");
   const [userError, setUserError] = useState("");
@@ -131,9 +132,8 @@ export const RegistrationForm = () => {
         });
     }
   };
-  const mode = useSelector(
-    (state: { mode: { mode: boolean } }) => state.mode.mode
-  );
+  const mode = useSelector((state: TState) => state.modeReducer.mode);
+
 
   return (
     <div className={style.container}>

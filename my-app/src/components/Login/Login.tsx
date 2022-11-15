@@ -12,6 +12,7 @@ import { login } from "../../fetch/login";
 import { Context } from "../../App";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { TState } from "../../store/store";
 
 export const Login = () => {
   const navigate = useNavigate();
@@ -56,9 +57,7 @@ export const Login = () => {
         }
       });
   };
-  const mode = useSelector(
-    (state: { mode: { mode: boolean } }) => state.mode.mode
-  );
+  const mode = useSelector((state: TState) => state.modeReducer.mode);
   return (
     <div className={style.container}>
       <form onSubmit={handleSubmit}>

@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { Context } from "../../../App";
+import { TState } from "../../../store/store";
 import { Burger } from "../../Burger/Burger";
 import { Button } from "../../UI/Button/Button";
 import { DarkModeToggle } from "../../UI/DarkModeToggle";
@@ -11,9 +12,7 @@ export const Header = () => {
 
   const { user, setUser } = useContext(Context);
   const dispatch = useDispatch();
-  const mode = useSelector(
-    (state: { mode: { mode: boolean } }) => state.mode.mode
-  );
+  const mode = useSelector((state: TState) => state.modeReducer.mode);
   const handleOnChange = () => {
     dispatch({ type: "CHANGE_MODE", payload: mode });
   };

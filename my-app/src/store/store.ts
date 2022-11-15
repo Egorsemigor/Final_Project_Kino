@@ -1,13 +1,14 @@
 import { combineReducers, createStore } from "redux";
 import { ILikeState, filmsReducer } from "./redusers/filmsReducer";
-import { modeReducer } from "./redusers/modeReducer";
+import { IMode, modeReducer } from "./redusers/modeReducer";
 
 export type TState = {
   filmsReducer: ILikeState;
+  modeReducer: IMode;
 };
 
 const rootReducer = combineReducers({
-  mode: modeReducer,
+  modeReducer,
   filmsReducer,
 });
 

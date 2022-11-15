@@ -1,4 +1,7 @@
-const defaultState: { mode: boolean } = {
+export interface IMode {
+  mode: boolean;
+}
+const defaultState: IMode = {
   mode: localStorage.getItem("mode") === "false" ? false : true,
 };
 export const modeReducer = (
