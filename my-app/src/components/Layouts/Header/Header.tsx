@@ -24,7 +24,6 @@ export const Header = () => {
     localStorage.removeItem("refresh");
     localStorage.removeItem("access");
   };
-  console.log(user);
 
   return (
     <header className={style.header}>

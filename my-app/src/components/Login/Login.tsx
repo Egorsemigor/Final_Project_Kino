@@ -48,11 +48,8 @@ export const Login = () => {
             })
             .then((user) => {
               setUser(user);
-              console.log(user);
               navigate("/main");
             });
-
-          console.log(json);
         } else {
         }
       });
@@ -76,7 +73,7 @@ export const Login = () => {
               value={password}
               placeholder={""}
               onChange={handlerPassword}
-              type={'password'}
+              type={"password"}
             />
           </div>
         </div>

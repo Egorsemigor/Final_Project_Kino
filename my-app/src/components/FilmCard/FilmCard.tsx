@@ -27,7 +27,6 @@ export const FilmCard = (props: ICard) => {
   const dispatch = useDispatch();
   const likePost: MouseEventHandler<HTMLButtonElement> = (event) => {
     event.stopPropagation();
-    console.log("1", props.liked);
     dispatch({ type: ACTIONS.LIKE_FILM, film: props });
   };
   const handleError: ReactEventHandler<HTMLImageElement> = () => {

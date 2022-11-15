@@ -13,19 +13,17 @@ export const SelectedFilm = (props: ICard) => {
   const [img, setImage] = useState("");
   const [imdbID, setImdbID] = useState("");
   const [trailer, setTrailer] = useState("");
-  const [id, setID] = useState(props.id);
   useEffect(() => {
     fetchImg(props.title).then((values) => {
       setImage(values.Poster);
       setImdbID(values.imdbID);
     });
-  }, [id]);
+  }, [props]);
   useEffect(() => {
     fetchTrailer(imdbID).then((values) => {
       setTrailer(values.linkEmbed);
-      console.log(values.linkEmbed);
     });
-  }, [imdbID, id]);
+  }, [imdbID]);
 
   const handleError: ReactEventHandler<HTMLImageElement> = () => {
     setImage(pic);
