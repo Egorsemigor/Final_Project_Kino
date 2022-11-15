@@ -8,7 +8,9 @@ import { ICard } from "../../Types/interface";
 export const SelectedPage = () => {
   const [film, setFilm] = useState<ICard | null>(null);
   const params = useParams();
+  console.log(params.filmId);
   useEffect(() => {
+    console.log({ filmId: params.filmId });
     const promise = fetch(
       `https://reactjs-cdp.herokuapp.com/movies/${params.filmId}`
     );
@@ -16,9 +18,10 @@ export const SelectedPage = () => {
       .then((response) => response.json())
       .then((values) => {
         setFilm(values);
-        
       });
-  }, []);
+  }, [params.filmId]);
+
+  console.log({ film });
   return (
     <>
       <Header />
