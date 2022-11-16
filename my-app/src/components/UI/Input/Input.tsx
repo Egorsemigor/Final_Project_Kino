@@ -1,6 +1,6 @@
-import { spawn } from "child_process";
 import { ChangeEventHandler, useState } from "react";
 import { useSelector } from "react-redux";
+import { TState } from "../../../store/store";
 import style from "./style.module.css";
 interface Input {
   value: string;
@@ -11,9 +11,7 @@ interface Input {
   title?: string;
 }
 export const Input = (props: Input) => {
-  const mode = useSelector(
-    (state: { mode: { mode: boolean } }) => state.mode.mode
-  );
+  const mode = useSelector((state: TState) => state.modeReducer.mode);
   const [password, setPassword] = useState(props.type);
   const handleType = () => {
     if (password === "password") {

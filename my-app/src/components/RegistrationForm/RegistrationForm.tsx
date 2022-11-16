@@ -7,7 +7,6 @@ import React, {
 import { Input } from "../UI/Input/Input";
 import { Button } from "../UI/Button/Button";
 import style from "./style.module.css";
-// import { Context } from "../../App";
 import {
   validateConfirmPassword,
   validateEmail,
@@ -19,8 +18,8 @@ import { Link, useNavigate } from "react-router-dom";
 import { registerUser } from "../../fetch/registerUser";
 import { Context } from "../../App";
 import { useSelector } from "react-redux";
+import { TState } from "../../store/store";
 export const RegistrationForm = () => {
-  const values = useContext(Context);
   const [userName, setUserName] = useState("");
   const [userError, setUserError] = useState("");
   const [email, setEmail] = useState("");
@@ -133,9 +132,8 @@ export const RegistrationForm = () => {
         });
     }
   };
-  const mode = useSelector(
-    (state: { mode: { mode: boolean } }) => state.mode.mode
-  );
+  const mode = useSelector((state: TState) => state.modeReducer.mode);
+
 
   return (
     <div className={style.container}>

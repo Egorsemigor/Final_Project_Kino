@@ -46,7 +46,7 @@
   top: 15px;
   width: 30px;
   height: 30px;
-  background-image: url("./open.svg");
+  background-image: url("../../../assets/img/open.svg");
 }
 .closedEye {
   cursor: pointer;
@@ -55,7 +55,7 @@
   top: 15px;
   width: 30px;
   height: 30px;
-  background-image: url("./Close.svg");
+  background-image: url("../../../assets/img/Close.svg");
 }
 @media (max-width: 420px) {
   .search {

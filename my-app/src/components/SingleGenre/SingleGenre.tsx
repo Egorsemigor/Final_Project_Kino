@@ -1,15 +1,18 @@
 import { useEffect, useState } from "react";
-import { Button } from "../../components/UI/Button/Button";
 import { useNavigate, useParams } from "react-router-dom";
 import { FilmList } from "../../components/FilmList/FilmList";
 import { Title } from "../../components/UI/Title/Title";
 import { fetchGenres } from "../../fetch/fetchGenres";
-import loader from "./loader1.svg";
-
+import loader from "../../assets/img/loader.svg";
+import { useDispatch, useSelector } from "react-redux";
+import { TState } from "../../store/store";
+import { setAllFilms } from "../../store/acrions/actions";
+import style from "./style.module.css";
 export const SingleGenre = () => {
-  const [genredFilms, setGenredFilms] = useState([]);
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
+  const films = useSelector((state: TState) => state.filmsReducer.allFilms);
+  const dispatch = useDispatch();
 
   const { genre } = useParams();
   useEffect(() => {
@@ -17,25 +20,15 @@ export const SingleGenre = () => {
     if (genre) {
       fetchGenres(genre)
         .then((film) => {
-          setGenredFilms(film.data);
+          dispatch(setAllFilms(film.data));
         })
         .finally(() => {
           setIsLoading(false);
         });
     }
-    console.log(genre);
   }, [genre]);
   const navigateToFilm = (id: number) => {
     navigate(`/selected/${id}`);
-  };
-
-  const loadMore = () => {
-    if (genre) {
-      return fetchGenres(genre, genredFilms.length).then((film) => {
-        console.log("2)", film);
-        setGenredFilms(genredFilms.concat(film.data));
-      });
-    }
   };
 
   return (
@@ -43,23 +36,12 @@ export const SingleGenre = () => {
       {typeof genre === "string" ? <Title genre={genre} /> : "Genre"}
 
       {isLoading ? (
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
+        <div className={style.loader}>
           <img src={loader} />
         </div>
       ) : (
-        <FilmList films={genredFilms} onClickFilm={navigateToFilm} />
+        <FilmList films={films} onClickFilm={navigateToFilm} />
       )}
-      {/* <Button
-        type={"dontAdaptive"}
-        text={"Load more films"}
-        onClick={loadMore}
-      /> */}
     </>
   );
 };

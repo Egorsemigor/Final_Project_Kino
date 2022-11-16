@@ -1,5 +1,6 @@
 import { ChangeEventHandler, useState } from "react";
 import { useSelector } from "react-redux";
+import { TState } from "../../../store/store";
 import style from "./style.module.css";
 interface Input {
   value: string;
@@ -9,9 +10,8 @@ interface Input {
   title?: string;
 }
 export const InputSearch = (props: Input) => {
-  const mode = useSelector(
-    (state: { mode: { mode: boolean } }) => state.mode.mode
-  );
+  const mode = useSelector((state: TState) => state.modeReducer.mode);
+
   return (
     <input
       placeholder={props.placeholder}

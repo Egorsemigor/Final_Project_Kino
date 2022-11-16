@@ -1,11 +1,11 @@
 .buttonLoadMore {
   display: flex;
   justify-content: center;
-  align-items: center ;
-  margin-bottom: 20px;;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-.inputSearch{
+.inputSearch {
   display: flex;
   justify-content: center;
   align-items: center;

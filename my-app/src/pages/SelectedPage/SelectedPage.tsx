@@ -18,7 +18,7 @@ export const SelectedPage = () => {
         setFilm(values);
         
       });
-  }, []);
+  }, [params.filmId]);
   return (
     <>
       <Header />

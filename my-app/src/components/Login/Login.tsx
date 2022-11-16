@@ -7,12 +7,12 @@ import React, {
 import { Input } from "../../components/UI/Input/Input";
 import { Button } from "../UI/Button/Button";
 import style from "./style.module.css";
-// import { Link, Navigate, useNavigate } from "react-router-dom";
 import { getUser } from "../../fetch/getUser";
 import { login } from "../../fetch/login";
 import { Context } from "../../App";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { TState } from "../../store/store";
 
 export const Login = () => {
   const navigate = useNavigate();
@@ -48,18 +48,13 @@ export const Login = () => {
             })
             .then((user) => {
               setUser(user);
-              console.log(user);
               navigate("/main");
             });
-
-          console.log(json);
         } else {
         }
       });
   };
-  const mode = useSelector(
-    (state: { mode: { mode: boolean } }) => state.mode.mode
-  );
+  const mode = useSelector((state: TState) => state.modeReducer.mode);
   return (
     <div className={style.container}>
       <form onSubmit={handleSubmit}>
@@ -78,7 +73,7 @@ export const Login = () => {
               value={password}
               placeholder={""}
               onChange={handlerPassword}
-              type={'password'}
+              type={"password"}
             />
           </div>
         </div>

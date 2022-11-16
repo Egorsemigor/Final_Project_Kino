@@ -3,7 +3,7 @@ import { Context } from "../../App";
 import { AllFilms } from "../AllFilms/AllFilms";
 import { LikedFilms } from "../LikedFilms/LikedFilms";
 import { TabButton } from "../UI/TabButton/TabButton";
-
+import style from "./style.module.css";
 type Tabi = "all" | "liked";
 
 export const getTabList = (tab: Tabi) => {
@@ -28,14 +28,7 @@ export const Tab = () => {
 
   return (
     <>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          gap: "30px",
-          marginBottom: "50px",
-        }}
-      >
+      <div className={style.tabs}>
         <TabButton
           text={"All Films"}
           onClick={() => setSelectedTab("all")}

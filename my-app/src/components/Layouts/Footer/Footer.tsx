@@ -1,9 +1,9 @@
 import style from "./style.module.css";
 import { useSelector } from "react-redux";
+import { TState } from "../../../store/store";
 export const Footer = () => {
-  const mode = useSelector(
-    (state: { mode: { mode: boolean } }) => state.mode.mode
-  );
+  const mode = useSelector((state: TState) => state.modeReducer.mode);
+
   return (
     <footer className={style.footer}>
       <div className={style.container}>

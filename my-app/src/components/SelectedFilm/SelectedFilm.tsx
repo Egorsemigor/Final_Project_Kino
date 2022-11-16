@@ -1,42 +1,29 @@
-import { Footer } from "../Layouts/Footer/Footer";
-import { Header } from "../Layouts/Header/Header";
 import style from "./style.module.css";
-import pic from "./pic.jpg";
+import pic from "../../assets/img/pic.jpg";
 import { ICard } from "../../Types/interface";
 import { ReactEventHandler, useEffect, useState } from "react";
 import ReactPlayer from "react-player";
 import { fetchImg } from "../../fetch/fetchImg";
 import { fetchTrailer } from "../../fetch/fetchTrailer";
-import Iframe from "react-iframe";
-import IframeResizer from "iframe-resizer-react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { fetchSimilarGenres } from "../../fetch/fetchGenres";
-import { FilmCard } from "../FilmCard/FilmCard";
 import { SimilarFilms } from "../SimilarFilms/SimilarFilms";
 
 export const SelectedFilm = (props: ICard) => {
   const [img, setImage] = useState("");
   const [imdbID, setImdbID] = useState("");
   const [trailer, setTrailer] = useState("");
-  const [similar, setSimilar] = useState([]);
   useEffect(() => {
     fetchImg(props.title).then((values) => {
       setImage(values.Poster);
       setImdbID(values.imdbID);
     });
-    fetchSimilarGenres(props.genres[0])
-      .then((films) => {
-        return films.data.filter((film: ICard) => film.title !== props.title);
-      })
-      .then((films) => {
-        setSimilar(films);
-        // console.log(films);
-      });
-  }, []);
+  }, [props]);
   useEffect(() => {
     fetchTrailer(imdbID).then((values) => {
-      setTrailer(values.linkEmbed);
-      console.log(values.linkEmbed);
+      if (values.linkEmbed !== null) {
+        setTrailer(values.linkEmbed);
+      }
     });
   }, [imdbID]);
 
@@ -47,25 +34,6 @@ export const SelectedFilm = (props: ICard) => {
   const navigateToFilm = (id: number) => {
     navigate(`/selected/${id}`);
   };
-  // const [screenSize, getDimension] = useState({
-  //   dynamicWidth: window.innerWidth,
-  //   dynamicHeight: window.innerHeight,
-  // });
-  // const setDimension = () => {
-  //   getDimension({
-  //     dynamicWidth: window.innerWidth,
-  //     dynamicHeight: window.innerHeight,
-  //   });
-  // };
-
-  // useEffect(() => {
-  //   window.addEventListener("resize", setDimension);
-
-  //   return () => {
-  //     window.removeEventListener("resize", setDimension);
-  //   };
-  // }, [screenSize]);
-  // console.log(screenSize.dynamicWidth);
   return (
     <>
       <div className={style.selectedFilm}>
@@ -114,12 +82,6 @@ export const SelectedFilm = (props: ICard) => {
           </div>
           <div className={style.videoFlex}>
             {trailer ? (
-              // <iframe
-              //   className={style.trailer}
-              //   src={`${trailer}`}
-
-              //   allowFullScreen={true}
-              // ></iframe>
               <iframe
                 allowFullScreen={true}
                 src={`${trailer}?width=1850`}

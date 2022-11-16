@@ -1,11 +1,8 @@
 import style from "./style.module.css";
-// interface IButton {
-//   text: string;
-//   onClick: () => void;
-// }
+
 import { MouseEventHandler, useContext } from "react";
-import { Context } from "../../../App";
 import { useSelector } from "react-redux";
+import { TState } from "../../../store/store";
 
 type ButtonColorType = "adaptive" | "dontAdaptive";
 
@@ -19,16 +16,14 @@ interface IButton {
 
 const getButtonStyle = (type: ButtonColorType, mode: boolean) => {
   if (type === "dontAdaptive") {
-    return mode ? style.bigButton : style.dayBigButton ;
+    return mode ? style.bigButton : style.dayBigButton;
   } else {
     return mode ? style.button : style.dayButton;
   }
 };
 
 export const Button = ({ text, type, onClick }: IButton) => {
-  const mode = useSelector(
-    (state: { mode: { mode: boolean } }) => state.mode.mode
-  );
+  const mode = useSelector((state: TState) => state.modeReducer.mode);
 
   return (
     <button className={getButtonStyle(type, mode)} onClick={onClick}>

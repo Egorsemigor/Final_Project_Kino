@@ -1,32 +1,29 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import { fetchSimilarGenres } from "../../fetch/fetchGenres";
+import { setAllFilms } from "../../store/acrions/actions";
+import { TState } from "../../store/store";
 import { ICard } from "../../Types/interface";
 import { FilmCard } from "../FilmCard/FilmCard";
-import { Title } from "../UI/Title/Title";
 import style from "./style.module.css";
 export const SimilarFilms = (props: ICard) => {
   const [similar, setSimilar] = useState([]);
+  const films = useSelector((state: TState) => state.filmsReducer.allFilms);
+  const dispatch = useDispatch();
   useEffect(() => {
-    // fetchImg(props.title).then((values) => {
-    //   setImage(values.Poster);
-    //   setImdbID(values.imdbID);
-    // });
     fetchSimilarGenres(props.genres[0])
       .then((films) => {
         return films.data.filter((film: ICard) => film.title !== props.title);
       })
-      .then((films) => {
-        setSimilar(films);
-        // console.log(films);
+      .then((item) => {
+        dispatch(setAllFilms(item));
       });
-  }, []);
-  const navigate = useNavigate();
+  }, [props.id]);
   return (
     <>
-      <h1>Simular Films</h1>
+      <h1 className={style.title}>Similar Films</h1>
       <div className={style.similar}>
-        {similar.map((film: ICard) => {
+        {films.map((film: ICard) => {
           const clickFilm = () => {
             if (props.onClickFilm) {
               props.onClickFilm(film.id);
@@ -47,6 +44,7 @@ export const SimilarFilms = (props: ICard) => {
                 revenue={0}
                 runtime={0}
                 genres={film.genres}
+                liked={film.liked}
               />
             </div>
           );

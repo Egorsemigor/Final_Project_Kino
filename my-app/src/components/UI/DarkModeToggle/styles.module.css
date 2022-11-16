@@ -34,15 +34,15 @@
 
 .slider:before {
   content: "";
-  background-image: url("./moon.svg");
+  background-image: url("../../../assets/img/moon.svg");
   background-repeat: no-repeat;
   background-position: center;
   position: absolute;
   border-radius: 50px;
   height: 20px;
   width: 20px;
-  left: 8px;
-  bottom: 4px;
+  left: 5px;
+  bottom: 5px;
   background-color: #57024d;
   -webkit-transition: 0.4s;
   transition: 0.4s;
@@ -53,11 +53,11 @@ input:checked + .slider {
 }
 
 input:checked + .slider:before {
-  background-image: url("./moon-dark.svg");
+  background-image: url("../../../assets/img/moon-dark.svg");
   background-color: #ffffff;
-  -webkit-transform: translateX(26px);
-  -ms-transform: translateX(26px);
-  transform: translateX(26px);
+  -webkit-transform: translateX(30px);
+  -ms-transform: translateX(30px);
+  transform: translateX(30px);
 }
 
 @media (max-width: 560px) {
@@ -70,7 +70,12 @@ input:checked + .slider:before {
     border-radius: 50px;
     height: 17px;
     width: 17px;
-    left: 8px;
+    left: 3.5px;
     bottom: 4px;
+  }
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
   }
 }

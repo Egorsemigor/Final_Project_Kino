@@ -7,13 +7,14 @@ import {
 } from "react";
 import { ICard } from "../../Types/interface";
 import style from "./style.module.css";
-import image from "./img.png";
+import image from "../../assets/img/img.png";
+
 import { useDispatch, useSelector } from "react-redux";
-import { setSyntheticLeadingComments } from "typescript";
 import { fetchImg } from "../../fetch/fetchImg";
 import { ACTIONS } from "../../store/constants";
-import { Like, Watch } from "../../assets";
+import { Like } from "../../assets";
 import { Context } from "../../App";
+import { TState } from "../../store/store";
 
 export const FilmCard = (props: ICard) => {
   const [img, setImage] = useState<string | null>("");
@@ -26,15 +27,13 @@ export const FilmCard = (props: ICard) => {
   const dispatch = useDispatch();
   const likePost: MouseEventHandler<HTMLButtonElement> = (event) => {
     event.stopPropagation();
-    console.log("1", props.liked);
     dispatch({ type: ACTIONS.LIKE_FILM, film: props });
   };
   const handleError: ReactEventHandler<HTMLImageElement> = () => {
     setImage(null);
   };
-  const mode = useSelector(
-    (state: { mode: { mode: boolean } }) => state.mode.mode
-  );
+  const mode = useSelector((state: TState) => state.modeReducer.mode);
+
   return (
     <>
       {img ? (

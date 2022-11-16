@@ -85,13 +85,13 @@
   fill: #b621fe;
 }
 .svgApple {
-  background-image: url("./APPLE.svg");
+  background-image: url("../../../assets/img/APPLE.svg");
   width: 24px;
   height: 24px;
 }
 
 .svgGoogle {
-  background-image: url("./google_play.svg");
+  background-image: url("../../../assets/img/google_play.svg");
   width: 24px;
   height: 24px;
 }
@@ -134,20 +134,20 @@
 }
 
 .icoFacebook {
-  background-image: url(./ICOx320/facebook_icon.svg);
+  background-image: url(../../../assets/img/ICOx320/facebook_icon.svg);
 }
 .icoTwitter {
-  background-image: url(./ICOx320/twitter_icon.svg);
+  background-image: url(../../../assets/img/ICOx320/twitter_icon.svg);
 }
 
 .icoPinterest {
-  background-image: url(./ICOx320/pinterest_icon.svg);
+  background-image: url(../../../assets/img/ICOx320/pinterest_icon.svg);
 }
 .icoInstagram {
-  background-image: url(./ICOx320/instagram_icon.svg);
+  background-image: url(../../../assets/img/ICOx320/instagram_icon.svg);
 }
 .icoGithub {
-  background-image: url(./ICOx320/github_icon.svg);
+  background-image: url(../../../assets/img/ICOx320/github_icon.svg);
 }
 .icoFacebook:hover {
   background-color: rgb(101, 101, 144);

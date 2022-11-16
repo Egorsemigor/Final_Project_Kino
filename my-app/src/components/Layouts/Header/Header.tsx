@@ -1,35 +1,18 @@
-import { access } from "fs";
-import {
-  ChangeEvent,
-  ChangeEventHandler,
-  useContext,
-  useEffect,
-  useState,
-} from "react";
+import { useContext } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { Context } from "../../../App";
-import { searchFilms } from "../../../fetch/searchFilms";
+import { TState } from "../../../store/store";
 import { Burger } from "../../Burger/Burger";
 import { Button } from "../../UI/Button/Button";
 import { DarkModeToggle } from "../../UI/DarkModeToggle";
-import { InputSearch } from "../../UI/InputSearch/InputSearch";
 import style from "./style.module.css";
 export const Header = () => {
   const navigate = useNavigate();
 
-  // const [search, setSearch] = useState("");
   const { user, setUser } = useContext(Context);
-  // const handleInput: ChangeEventHandler<HTMLInputElement> = (event) => {
-  //   setSearch(event.target.value);
-  // };
-  // useEffect(() => {
-  //   searchFilms(search).then((values) => {});
-  // }, [search]);
   const dispatch = useDispatch();
-  const mode = useSelector(
-    (state: { mode: { mode: boolean } }) => state.mode.mode
-  );
+  const mode = useSelector((state: TState) => state.modeReducer.mode);
   const handleOnChange = () => {
     dispatch({ type: "CHANGE_MODE", payload: mode });
   };
@@ -41,7 +24,6 @@ export const Header = () => {
     localStorage.removeItem("refresh");
     localStorage.removeItem("access");
   };
-  console.log(user);
 
   return (
     <header className={style.header}>
@@ -57,11 +39,6 @@ export const Header = () => {
           <Link style={{ textDecoration: "none" }} to={"/main"}>
             <div className={mode ? style.logo : style.dayLogo}>MovieHouse</div>
           </Link>
-          {/* <InputSearch
-            value={search}
-            placeholder={"Search for film..."}
-            onChange={handleInput}
-          /> */}
 
           {user ? (
             <div className={style.buttonContainer}>

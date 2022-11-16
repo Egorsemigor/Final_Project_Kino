@@ -1,4 +1,4 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { genresArr } from "./genresArr";
 import style from "./style.module.css";
 
