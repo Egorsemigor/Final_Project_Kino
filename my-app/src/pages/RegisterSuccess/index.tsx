@@ -11,12 +11,11 @@ export const RegisterSuccess = () => {
       <Header />
       <InfoTemplate
         title={`Registration Confirmation`}
-        textButton={"Home"}
+        textButton={"Login"}
         body={`
             Please activate your account with 
-            test@gmail.com
-            the activation link in the email
-            test@gmail.com
+            your Email
+            and activation link in the email.
             Please, check your email`}
         onClick={() => {
           navigate("/login");

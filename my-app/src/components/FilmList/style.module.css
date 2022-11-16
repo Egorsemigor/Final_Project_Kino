@@ -10,5 +10,8 @@
   justify-self: center;
   align-items: center;
 }
-
-
+@media (max-width: 410px) {
+  .container {
+    min-height: 100vh;
+  }
+}

@@ -17,6 +17,7 @@
   border: 3px solid white;
   color: white;
   background-color: transparent;
+  transition: 0.3s all;
 }
 .link:hover {
   display: flex;

@@ -11,6 +11,7 @@ import style from "./style.module.css";
 export const SingleGenre = () => {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
+  // const [genredFilms, setGenredFilms]=useState([])
   const films = useSelector((state: TState) => state.filmsReducer.allFilms);
   const dispatch = useDispatch();
 

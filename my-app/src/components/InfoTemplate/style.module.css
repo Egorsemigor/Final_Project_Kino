@@ -10,7 +10,7 @@
 }
 .title {
   text-align: center;
-  font-family: "Raleway";
+  font-family: "Cinzel";
   font-weight: 700;
   font-size: 45px;
   line-height: 145.2%;
@@ -19,8 +19,7 @@
   margin-bottom: 35px;
 }
 .body {
-  
-  font-family: "Raleway";
+  font-family: "Cinzel";
   font-style: normal;
   font-weight: 400;
   font-size: 25px;
@@ -33,7 +32,7 @@
 }
 .darkBody {
   width: 600px;
-  font-family: "Raleway";
+  font-family: "Cinzel";
   font-style: normal;
   font-weight: 400;
   font-size: 25px;
@@ -43,10 +42,15 @@
   color: #ffffff;
   margin-bottom: 96px;
 }
+@media (max-width: 600px) {
+  .darkBody {
+    width: 320px;
+  }
+}
 
-@media( max-width: 500px){
+@media (max-width: 500px) {
   .title {
-    font-size: 40px;
+    font-size: 35px;
   }
   .body {
     font-size: 20px;
