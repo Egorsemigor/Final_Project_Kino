@@ -21,7 +21,9 @@ export const SelectedFilm = (props: ICard) => {
   }, [props]);
   useEffect(() => {
     fetchTrailer(imdbID).then((values) => {
-      setTrailer(values.linkEmbed);
+      if (values.linkEmbed !== null) {
+        setTrailer(values.linkEmbed);
+      }
     });
   }, [imdbID]);
 
