@@ -21,10 +21,12 @@ export const SelectedFilm = (props: ICard) => {
   }, [props]);
 
   useEffect(() => {
-    fetchTrailer(imdbID).then((values) => {
-      setTrailer(values.linkEmbed);
-      console.log(values.linkEmbed);
-    });
+    if (imdbID) {
+      fetchTrailer(imdbID).then((values) => {
+        setTrailer(values.linkEmbed);
+        console.log(values.linkEmbed);
+      });
+    }
   }, [imdbID]);
 
   const handleError: ReactEventHandler<HTMLImageElement> = () => {
