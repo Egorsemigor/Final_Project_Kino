@@ -20,7 +20,7 @@ export const FilmCard = (props: ICard) => {
   const [img, setImage] = useState<string | null>("");
   const { user } = useContext(Context);
   useEffect(() => {
-    fetchImg(props.title).then((values) => {
+    fetchImg(props.nameEn).then((values) => {
       setImage(values.Poster);
     });
   }, []);
@@ -36,12 +36,22 @@ export const FilmCard = (props: ICard) => {
 
   return (
     <>
-      {img ? (
+      {props.posterUrl ? (
         <div className={style.card}>
-          <span className={style.average}>{props.vote_average}</span>
-          <img onError={handleError} src={img} className={style.posterImg} />
-          <h2 className={style.title}>{props.title}</h2>
-          <p className={style.genres}>{props.genres.join(", ")}</p>
+          <span className={style.average}>
+            {props.rating || props.ratingImdb || 8.3}
+          </span>
+          <img
+            onError={handleError}
+            src={props.posterUrl}
+            className={style.posterImg}
+          />
+          <h2 className={style.title}>{props.nameRu}</h2>
+          <p className={style.genres}>
+            {props.genres
+              ? props.genres.map((item) => item.genre).join(", ")
+              : null}
+          </p>
           {user ? (
             <div className={style.iconsFlex}>
               <button onClick={likePost}>
@@ -52,11 +62,13 @@ export const FilmCard = (props: ICard) => {
         </div>
       ) : (
         <div className={style.card}>
-          <span className={style.average}>{props.vote_average}</span>
+          <span className={style.average}>{props.ratingVoteCount}</span>
 
           <img src={image} className={style.posterImg} />
-          <h2 className={style.title}>{props.title}</h2>
-          <p className={style.genres}>{props.genres.join(", ")}</p>
+          <h2 className={style.title}>{props.nameRu}</h2>
+          <p className={style.genres}>
+            {props.genres.map((item) => item.genre).join(", ")}
+          </p>
           {user ? (
             <div className={style.iconsFlex}>
               <button onClick={likePost}>

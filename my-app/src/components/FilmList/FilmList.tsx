@@ -7,27 +7,30 @@ export interface IList {
 }
 export const FilmList = ({ films, onClickFilm }: IList) => {
   return (
+    //new commit
     <div className={style.container}>
       <div className={style.adaptiveGrid}>
         {films.map((item) => {
           const clickFilm = () => {
-            onClickFilm(item.id);
+            const id = item.filmId ? item.filmId : item.kinopoiskId;
+            if (id) {
+              onClickFilm(id);
+            }
+            console.log("id1", item.filmId || item.kinopoiskId);
           };
           return (
             <div onClick={clickFilm}>
               <FilmCard
-                id={item.id}
-                key={item.id}
-                title={item.title}
-                tagline={item.tagline}
-                vote_average={item.vote_average}
-                vote_count={item.vote_count}
-                release_date={item.release_date}
-                poster_path={item.poster_path}
-                overview={item.overview}
-                budget={item.budget}
-                revenue={item.revenue}
-                runtime={item.runtime}
+                filmId={item.filmId}
+                key={item.filmId}
+                nameEn={item.nameEn}
+                nameRu={item.nameRu}
+                rating={item.rating}
+                ratingImdb={item.ratingImdb}
+                ratingVoteCount={item.ratingVoteCount}
+                year={item.year}
+                posterUrl={item.posterUrl}
+                filmLength={item.filmLength}
                 genres={item.genres}
                 liked={item.liked}
               />

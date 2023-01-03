@@ -10,15 +10,25 @@ export const SelectedPage = () => {
   const params = useParams();
   useEffect(() => {
     const promise = fetch(
-      `https://reactjs-cdp.herokuapp.com/movies/${params.filmId}`
+      `https://kinopoiskapiunofficial.tech/api/v2.2/films/${params.filmId}`,
+      {
+        method: "GET",
+        headers: {
+          "X-API-KEY": "a533b478-e88b-4441-ba4a-6bf5e23e9ec3",
+          "Content-Type": "application/json",
+        },
+      }
     );
     promise
-      .then((response) => response.json())
+      .then((response) => {
+        return response.json();
+      })
       .then((values) => {
         setFilm(values);
-        
+        console.log("film");
       });
   }, [params.filmId]);
+  console.log("film", film);
   return (
     <>
       <Header />

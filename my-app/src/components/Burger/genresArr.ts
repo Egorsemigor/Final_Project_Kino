@@ -1,12 +1,34 @@
+// export const genresArr: string[] = [
+//   "Drama",
+//   "Adventure",
+//   "Comedy",
+//   "Fantasy",
+//   "Action",
+//   "Horror",
+//   "Thriller",
+//   "Animation",
+//   "Family",
+//   "History",
+// ];
 export const genresArr: string[] = [
-  "Drama",
-  "Adventure",
-  "Comedy",
-  "Fantasy",
-  "Action",
-  "Horror",
-  "Thriller",
-  "Animation",
-  "Family",
-  "History",
+  "Триллер",
+  "Драма",
+  "Криминал",
+  "Мелодрама",
+  "Детектив",
+  "Фантастика",
+  "Приключения",
+  "Биография",
+  "Фильм-нуар",
+  "Вестерн",
 ];
+// 1 - триллер;
+// 2 - драмма;
+// 3 - креминал;
+// 4 - мелодрамма;
+// 5 - детектив;
+// 6 - фантастика;
+// 7 - приключения;
+// 8 - биография;
+// 9 - фильм - нуар;
+// 10 - вестерн;

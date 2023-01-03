@@ -11,12 +11,12 @@ export const Burger = () => {
       </label>
 
       <ul className={style.menuBox}>
-        {genresArr.map((genre: string) => (
+        {genresArr.map((genre: string, index: number) => (
           <NavLink
             className={({ isActive }) =>
               isActive ? style.active : style.menuItem
             }
-            to={`/genres/${genre.toLowerCase()}`}
+            to={`/genres/${index + 1}`}
           >
             {" "}
             {genre}

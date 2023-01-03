@@ -15,13 +15,14 @@ export const AllFilms = () => {
   const dispatch = useDispatch();
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
-  const loadMore = () => {
-    return fetchFilms(films.length, search).then((film) => {
-      dispatch(setAllFilms(films.concat(film.data)));
+  const loadMore = (page: number) => {
+    fetchFilms(page).then((values) => {
+      dispatch(setAllFilms(values.films));
     });
   };
 
   const [search, setSearch] = useState("");
+  const [page, setPage] = useState<number[]>([]);
   const handleInput: ChangeEventHandler<HTMLInputElement> = (event) => {
     setSearch(event.target.value);
   };
@@ -29,13 +30,34 @@ export const AllFilms = () => {
     setIsLoading(true);
     searchFilms(search)
       .then((values) => {
-        dispatch(setAllFilms(values.data));
+        dispatch(setAllFilms(values.films));
+        console.log("sdmnslr", values.films);
       })
       .finally(() => {
         setIsLoading(false);
       });
   }, [search]);
-  const navigateToFilm = (id: number) => {
+
+  useEffect(() => {
+    setIsLoading(true);
+    fetchFilms(1)
+      .then((values) => {
+        dispatch(setAllFilms(values.films));
+        console.log("sdmnslr", values);
+
+        for (let i = 1; i <= values.pagesCount; i++) {
+          if (page.length < values.pagesCount) {
+            page.push(i);
+          }
+        }
+        console.log("page", page);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
+  }, []);
+
+  const navigateToFilm = (id: number | undefined) => {
     navigate(`/selected/${id}`);
   };
 
@@ -62,11 +84,17 @@ export const AllFilms = () => {
         <>
           <FilmList films={films} onClickFilm={navigateToFilm} />
           <div className={style.buttonLoadMore}>
-            <Button
-              type={"dontAdaptive"}
-              text={"Load more films"}
-              onClick={loadMore}
-            />
+            {page.map((item) => {
+              return (
+                <Button
+                  type={"adaptive"}
+                  text={`${item}`}
+                  onClick={() => {
+                    loadMore(item);
+                  }}
+                />
+              );
+            })}
           </div>
         </>
       )}

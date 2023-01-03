@@ -10,30 +10,40 @@ import { fetchSimilarGenres } from "../../fetch/fetchGenres";
 import { SimilarFilms } from "../SimilarFilms/SimilarFilms";
 
 export const SelectedFilm = (props: ICard) => {
-  const [img, setImage] = useState("");
+  const [img, setImg] = useState("");
+
+  const [plot, setPlot] = useState("");
   const [imdbID, setImdbID] = useState("");
   const [trailer, setTrailer] = useState("");
   useEffect(() => {
-    fetchImg(props.title).then((values) => {
-      setImage(values.Poster);
+    fetchImg(props.nameEn).then((values) => {
+      console.log("values", values);
+
       setImdbID(values.imdbID);
+      console.log("values.imdbI", values);
     });
   }, [props]);
   useEffect(() => {
-    fetchTrailer(imdbID).then((values) => {
-      if (values.linkEmbed !== null) {
-        setTrailer(values.linkEmbed);
-      }
-    });
+    if (props.kinopoiskId) {
+      fetchTrailer(props.kinopoiskId).then((values) => {
+        console.log("values2222222222", values.items);
+        setTrailer(values.items[0].url);
+        // if (values.items.url !== null) {
+        //   setTrailer(values.items.url);
+        // }
+      });
+    }
   }, [imdbID]);
 
   const handleError: ReactEventHandler<HTMLImageElement> = () => {
-    setImage(pic);
+    setImg(pic);
   };
   const navigate = useNavigate();
   const navigateToFilm = (id: number) => {
     navigate(`/selected/${id}`);
   };
+  // console.log("props.ratin", props.ratingImdb);
+
   return (
     <>
       <div className={style.selectedFilm}>
@@ -46,36 +56,40 @@ export const SelectedFilm = (props: ICard) => {
                 }}
                 className={style.arrow}
               ></div>
-              <div className={style.tagline}>{props.tagline}</div>
-              {img ? (
-                <img className={style.image} src={img} onError={handleError} />
+              <div className={style.tagline}>{props.slogan}</div>
+              {props.posterUrl ? (
+                <img
+                  className={style.image}
+                  src={props.posterUrl}
+                  onError={handleError}
+                />
               ) : (
                 <img className={style.image} src={pic} onError={handleError} />
               )}
             </div>
             <div className={style.secondBlock}>
-              <h1 className={style.filmTitle}>{props.title}</h1>
+              <h1 className={style.filmTitle}>{props.nameRu}</h1>
               <div className={style.releaseDate}>
-                Release date: {props.release_date}
+                Release date: {props.year}
               </div>
-              <div className={style.runtime}>Runtime: {props.runtime} min.</div>
+              <div className={style.runtime}>
+                Runtime: {props.filmLength} min.
+              </div>
 
-              <div className={style.revenue}>
-                What is this movie about: {props.overview}
-              </div>
+              <div className={style.revenue}>{props.shortDescription}</div>
               <div className={style.genres}>
-                Genres: {props.genres.join(", ")}
+                Genres: {props.genres.map((item) => item.genre).join(", ")}
               </div>
 
               <div className={style.rateBubble}>
                 <div className={style.ratePlace}>
-                  <div className={style.rate}>{props.vote_average}</div>
+                  <div className={style.rate}>{props.ratingImdb}</div>
                 </div>
                 <div>
                   <div className={style.voteCount}>
-                    People voited: {props.vote_count}
+                    People voited: {props.ratingVoteCount}
                   </div>
-                  <div className={style.budget}>Budget: {props.budget} $</div>
+                  <div className={style.budget}>Budget: 360890 $</div>
                 </div>
               </div>
             </div>
@@ -95,18 +109,17 @@ export const SelectedFilm = (props: ICard) => {
             )}
           </div>
           <SimilarFilms
-            id={props.id}
-            title={props.title}
-            tagline={""}
-            vote_average={props.vote_average}
-            vote_count={0}
-            release_date={""}
-            poster_path={""}
-            overview={""}
-            budget={0}
-            revenue={0}
-            runtime={0}
+            filmId={props.filmId}
+            key={props.filmId}
+            nameEn={props.nameEn}
+            nameRu={props.nameRu}
+            ratingImdb={props.ratingImdb}
+            ratingVoteCount={props.ratingVoteCount}
+            year={props.year}
+            posterUrl={props.posterUrl}
+            filmLength={props.filmLength}
             genres={props.genres}
+            liked={props.liked}
             onClickFilm={navigateToFilm}
           />
         </div>

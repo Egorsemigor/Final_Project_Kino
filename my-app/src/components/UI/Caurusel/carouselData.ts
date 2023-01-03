@@ -6,19 +6,19 @@ export const carouselData = [
 generations-old ban on music, Miguel dreams of becoming an
 accomplished musician like his idol, Ernesto de la Cruz.
 Desperate to prove his talent...`,
-    href: "http://localhost:3000/selected/354912",
+    href: "http://localhost:3000/selected/679486",
   },
   {
     src: "https://images.hdqwalls.com/download/keanu-reves-as-ghost-rider-3m-2560x1080.jpg",
     title: "Ghost Rider",
     text: `What is this movie about: In order to save his dying father, young stunt cyclist, Johnny Blaze sells his soul to Mephistopheles and sadly parts from the pure-hearted, Roxanne Simpson, the love of his life. Years later, Johnny's path crosses again with Roxanne, now a go-getting reporter...`,
-    href: "http://localhost:3000/selected/1250",
+    href: "http://localhost:3000/selected/391886",
   },
   {
     src: "https://images.hdqwalls.com/download/avatar-10k-0r-2560x1080.jpg",
     title: "Avatar",
     text: `What is this movie about: In the 22nd century, a paraplegic Marine is dispatched to the moon Pandora on a unique mission, but becomes torn between following orders and protecting an alien civilization.`,
-    href: "http://localhost:3000/selected/19995",
+    href: "http://localhost:3000/selected/251733",
   },
   {
     src: "https://images.hdqwalls.com/download/beauty-and-the-beast-4k-qu-2560x1080.jpg",
@@ -26,7 +26,7 @@ Desperate to prove his talent...`,
     text: ` What is this movie about: A live-action adaptation of Disney's
     version of the classic tale of a cursed prince and a beautiful
     young woman who helps him break the spell.`,
-    href: "http://localhost:3000/selected/321612",
+    href: "http://localhost:3000/selected/744987",
   },
   {
     src: "https://images.hdqwalls.com/download/thor-ragnarok-hd-2-2560x1080.jpg",
@@ -35,7 +35,7 @@ Desperate to prove his talent...`,
     of the universe and finds himself in a race against time to get
     back to Asgard to stop Ragnarok, the prophecy of destruction to
     his homeworld and the end of Asgardian civilization...`,
-    href: "http://localhost:3000/selected/284053",
+    href: "http://localhost:3000/selected/822709",
   },
   {
     src: "https://images.hdqwalls.com/download/black-panther-wakanda-forever-4k-wx-2560x1080.jpg",
@@ -43,7 +43,7 @@ Desperate to prove his talent...`,
     text: ` What is this movie about: King T'Challa returns home from
     America to the reclusive, technologically advanced African
     nation of Wakanda to serve as his country's new leader...`,
-    href: "http://localhost:3000/selected/284054",
+    href: "http://localhost:3000/selected/623250",
   },
   {
     src: "https://m.media-amazon.com/images/M/MV5BOTQxMTI0MjczNl5BMl5BanBnXkFtZTgwMTI0MjQxNTM@._V1_.jpg",
@@ -51,7 +51,7 @@ Desperate to prove his talent...`,
     text: `  What is this movie about: When the creator of a popular video
     game system dies, a virtual contest is created to compete for
     his fortune.`,
-    href: "http://localhost:3000/selected/333339",
+    href: "http://localhost:3000/selected/538225",
   },
   {
     src: "https://images.hdqwalls.com/download/the-greatest-showman-5k-xu-2560x1080.jpg",

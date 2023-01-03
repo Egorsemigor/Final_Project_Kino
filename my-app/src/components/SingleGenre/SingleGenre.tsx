@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { TState } from "../../store/store";
 import { setAllFilms } from "../../store/acrions/actions";
 import style from "./style.module.css";
+import { genresArr } from "../Burger/genresArr";
 export const SingleGenre = () => {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(false);
@@ -19,9 +20,10 @@ export const SingleGenre = () => {
   useEffect(() => {
     setIsLoading(true);
     if (genre) {
-      fetchGenres(genre)
+      fetchGenres(Number(genre))
         .then((film) => {
-          dispatch(setAllFilms(film.data));
+          console.log("film2", film);
+          dispatch(setAllFilms(film.items));
         })
         .finally(() => {
           setIsLoading(false);
@@ -30,11 +32,16 @@ export const SingleGenre = () => {
   }, [genre]);
   const navigateToFilm = (id: number) => {
     navigate(`/selected/${id}`);
+    console.log("id2", id);
   };
 
   return (
     <>
-      {typeof genre === "string" ? <Title genre={genre} /> : "Genre"}
+      {typeof genre === "string" ? (
+        <Title genre={genresArr[Number(genre) - 1]} />
+      ) : (
+        "Genre"
+      )}
 
       {isLoading ? (
         <div className={style.loader}>
