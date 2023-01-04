@@ -63,13 +63,13 @@ Desperate to prove his talent...`,
     src: "https://images.hdqwalls.com/download/the-shape-of-water-5k-oa-2560x1080.jpg",
     title: "The Shape of Water",
     text: `What is this movie about: An other-worldly story, set against the backdrop of Cold War era America circa 1962, where a mute janitor working at a lab falls in love with an amphibious man being held captive there and devises a plan to help him escape.`,
-    href: "http://localhost:3000/selected/399055",
+    href: "http://localhost:3000/selected/977743",
   },
 
   {
     src: "https://images.hdqwalls.com/download/gipsy-avenger-pacific-rim-5k-an-2560x1080.jpg",
     title: "Pacific Rim: Uprising",
     text: "What is this movie about: It has been ten years since The Battle of the Breach and the oceans are still, but restless. Vindicated by the victory at the Breach, the Jaeger program has evolved into the most powerful global defense force in human history...",
-    href: "http://localhost:3000/selected/268896",
+    href: "http://localhost:3000/selected/721154",
   },
 ];

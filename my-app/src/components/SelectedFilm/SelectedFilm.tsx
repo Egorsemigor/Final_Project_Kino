@@ -11,29 +11,17 @@ import { SimilarFilms } from "../SimilarFilms/SimilarFilms";
 
 export const SelectedFilm = (props: ICard) => {
   const [img, setImg] = useState("");
-
-  const [plot, setPlot] = useState("");
-  const [imdbID, setImdbID] = useState("");
   const [trailer, setTrailer] = useState("");
-  useEffect(() => {
-    fetchImg(props.nameEn).then((values) => {
-      console.log("values", values);
-
-      setImdbID(values.imdbID);
-      console.log("values.imdbI", values);
-    });
-  }, [props]);
   useEffect(() => {
     if (props.kinopoiskId) {
       fetchTrailer(props.kinopoiskId).then((values) => {
-        console.log("values2222222222", values.items);
-        setTrailer(values.items[0].url);
-        // if (values.items.url !== null) {
-        //   setTrailer(values.items.url);
-        // }
+        values.items.forEach((item: any) => {
+          if (item.url.includes("https://www.youtube.com"))
+            setTrailer(item.url);
+        });
       });
     }
-  }, [imdbID]);
+  }, [props.kinopoiskId]);
 
   const handleError: ReactEventHandler<HTMLImageElement> = () => {
     setImg(pic);
@@ -42,7 +30,6 @@ export const SelectedFilm = (props: ICard) => {
   const navigateToFilm = (id: number) => {
     navigate(`/selected/${id}`);
   };
-  // console.log("props.ratin", props.ratingImdb);
 
   return (
     <>
@@ -89,23 +76,19 @@ export const SelectedFilm = (props: ICard) => {
                   <div className={style.voteCount}>
                     People voited: {props.ratingVoteCount}
                   </div>
-                  <div className={style.budget}>Budget: 360890 $</div>
+                  <div className={style.budget}>Budget: 3608900 $</div>
                 </div>
               </div>
             </div>
           </div>
           <div className={style.videoFlex}>
             {trailer ? (
-              <iframe
-                allowFullScreen={true}
-                src={`${trailer}?width=1850`}
-                width="850"
-                height="540"
+              <ReactPlayer
+                controls={true}
+                url={`https://www.youtube.com/watch?v=8Dk0d8hz9ag`}
               />
             ) : (
-              <ReactPlayer
-                url={`https://www.youtube.com/watch?v=K7e3jpYf28I`}
-              />
+              <ReactPlayer url={`${trailer}`} />
             )}
           </div>
           <SimilarFilms

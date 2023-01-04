@@ -17,14 +17,9 @@ export const SimilarFilms = (props: ICard) => {
     fetchSimilarGenres(Number(param.filmId))
       .then((films) => films.items)
       .then((item) => {
-        console.log("nnn", item);
-        // setSimilar(item);
-        // console.log("similar", similar);
-
         dispatch(setAllFilms(item));
       });
   }, [props.filmId]);
-  console.log("films22", similar);
   return (
     <>
       <h1 className={style.title}>Similar Films</h1>
@@ -32,7 +27,6 @@ export const SimilarFilms = (props: ICard) => {
         {films.map((film: ICard) => {
           const clickFilm = () => {
             if (props.onClickFilm) {
-              // props.onClickFilm(film.filmId);
               navigate(`/selected/${film.filmId}`);
             }
           };
@@ -43,7 +37,6 @@ export const SimilarFilms = (props: ICard) => {
                 key={film.filmId}
                 nameEn={film.nameEn}
                 nameRu={film.nameRu}
-                // tagline={item.tagline}
                 rating={film.rating}
                 ratingVoteCount={film.ratingVoteCount}
                 year={film.year}

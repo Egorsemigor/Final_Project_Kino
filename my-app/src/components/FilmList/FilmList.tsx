@@ -7,7 +7,7 @@ export interface IList {
 }
 export const FilmList = ({ films, onClickFilm }: IList) => {
   return (
-    //new commit
+    
     <div className={style.container}>
       <div className={style.adaptiveGrid}>
         {films.map((item) => {
@@ -16,7 +16,6 @@ export const FilmList = ({ films, onClickFilm }: IList) => {
             if (id) {
               onClickFilm(id);
             }
-            console.log("id1", item.filmId || item.kinopoiskId);
           };
           return (
             <div onClick={clickFilm}>

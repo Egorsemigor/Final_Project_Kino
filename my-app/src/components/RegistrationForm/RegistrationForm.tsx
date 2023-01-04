@@ -105,7 +105,6 @@ export const RegistrationForm = () => {
             ) {
               setError("Пользователь с таким имененм существует!");
             }
-            console.log(json);
             if (json?.email?.includes("user with this Email already exists.")) {
               setError("Пользователь с таким Email уже существует.");
             }
@@ -126,14 +125,11 @@ export const RegistrationForm = () => {
             ) {
               setError("Этот пароль содержит только цифры");
             }
-
-            console.log(json);
           }
         });
     }
   };
   const mode = useSelector((state: TState) => state.modeReducer.mode);
-
 
   return (
     <div className={style.container}>
