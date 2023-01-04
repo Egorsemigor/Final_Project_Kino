@@ -10,7 +10,7 @@
 
 .flexBlock {
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   margin-bottom: 70px;
   gap: 100px;
 }
@@ -24,6 +24,7 @@
 }
 
 .tagline {
+  width: 314px;
   font-family: "Cinzel";
   font-size: 20px;
   margin-bottom: 20px;

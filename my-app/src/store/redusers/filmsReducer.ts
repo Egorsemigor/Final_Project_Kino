@@ -22,7 +22,7 @@ export const filmsReducer = (state = defaultState, action: AnyAction) => {
       const film = action.film;
       const newLikedfilm = film.liked
         ? state.likedFilms.filter((item) => {
-            if (item.id === film.id) {
+            if (item.filmId === film.id) {
               return false;
             } else {
               return true;
@@ -30,7 +30,7 @@ export const filmsReducer = (state = defaultState, action: AnyAction) => {
           })
         : state.likedFilms.concat([{ ...film, liked: true }]);
       const newAllFilms = state.allFilms.map((film) => {
-        if (film.id === action.film.id) {
+        if (film.filmId === action.film.id) {
           film.liked = !film.liked;
         }
         return film;
